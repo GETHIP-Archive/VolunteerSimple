@@ -7,6 +7,7 @@
 
   <title>VolunteerSimple</title>
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="main.js">
   <link href='css/bootstrap.css' rel='stylesheet'><!-- *** -->
 
 
@@ -58,29 +59,36 @@
   <input type="text" name="search" placeholder="Search...">
 
   <div class="row">
-    <div class="col-sm-4">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Opportunity 1</h3>
-        </div>
-        <div class="panel-body">
-          description
-        </div>
-      </div>
-
-      </div>
       <div class="col-sm-4">
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Opportunity 2</h3>
+          <h3 class="panel-title">Opportunity</h3>
+          <!--<div class="divbutton">--><!-- mouseover effect in main.js/main.css -->
+          <button class="btn-lg btn-primary" type="button" style="float: right; display: none;">Save</button>
+          <!-- or <p align="right"> then button stays inside the grey area-->
+          <!--</div>-->
         </div>
         <div class="panel-body">
-          description
+          <img src="http://www.clipartkid.com/images/624/blue-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-PoY5qK-clipart.png" name="placeholder-pic" width="140" height="140" border="0">
+          [description]
         </div>
       </div>
       </div>
+
+  <template name="opportunity">
+     <div class="col-sm-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title" placeholder="Opportunity Title">{{opportunity.title}}</h3>
+          </div>
+          <div class="panel-body">
+            <img src="" name="pic" width="140" height="140" border="0"><!-- class="img-circle" -->
+            {{opportunity.description}}
+          </div>
+        </div>
+     </div>
+  </template>
 
 
   </div>
