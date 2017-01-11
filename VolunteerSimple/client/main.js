@@ -20,14 +20,3 @@ Template.hello.events({
     instance.counter.set(instance.counter.get() + 1);
   },
 });
-
-/*
-//save button mouseover- i am no expert, so idk how to make this work, an idea though
-$(document).ready(function () {
-  $(document).on('mouseenter', '.divbutton', function () {
-      $(this).find(":button").show();
-  }).on('mouseleave', '.divbutton', function () {
-      $(this).find(":button").hide();
-  });
-});
-*/
