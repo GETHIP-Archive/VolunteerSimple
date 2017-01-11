@@ -7,9 +7,9 @@
 
   <title>VolunteerSimple</title>
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="profile.html">
+  <link rel="stylesheet" href="main.html">
   <link rel="stylesheet" href="saved.html">
-  <link rel="stylesheet" href="signup.html">
+  <link rel="stylesheet" href="profile.html">
   <link rel="stylesheet" href="main.js">
   <link href='css/bootstrap.css' rel='stylesheet'><!-- *** -->
 
@@ -33,7 +33,7 @@
 
       <div>
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Home</a></li>
           <li><a href="#">Trending</a></li>
         </ul>
           <li class="dropdown">
@@ -41,7 +41,7 @@
             <ul class="dropdown-menu">
                 <li><a href="#">Profile</a></li>
                 <!--<li class="divider" role="separator"></li>-->
-                <li><a href="#">Saved</a></li>
+                <li class="active"><a href="#">Saved</a></li>
                 <li><a href="#">Messages</a></li>
               </ul>
             </li>
@@ -57,44 +57,36 @@
 </nav>
 
   <div class='container'>
-    <h1>Welcome to VolunteerSimple!</h1>
 
   <input type="text" name="search" placeholder="Search...">
 
-  <div class="row">
-      <div class="col-sm-4">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Opportunity</h3>
-          <!--<div class="divbutton">--><!-- mouseover effect in main.js/main.css -->
-          <button class="btn-lg btn-primary" type="button" style="float: right; display: none;">Save</button>
-          <!-- or <p align="right"> then button stays inside the grey area-->
-          <!--</div>-->
-        </div>
-        <div class="panel-body">
-          <img src="http://www.clipartkid.com/images/624/blue-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-PoY5qK-clipart.png" name="placeholder-pic" width="140" height="140" border="0">
-          [description]
-        </div>
-      </div>
-      </div>
-
-  <template name="opportunity">
-     <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title" placeholder="Opportunity Title">{{opportunity.title}}</h3>
+  <template name="new">
+    <div class="container" id="profileContainer">
+        <form id="newProfile">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="First">
           </div>
-          <div class="panel-body">
-            <img src="" name="pic" width="140" height="140" border="0"><!-- class="img-circle" -->
-            {{opportunity.description}}
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Last">
           </div>
-        </div>
-     </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="bio" placeholder="youremail@realdomain">
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" class="form-control" id="age" placeholder="Age">
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <input type="text" class="form-control" id="bio" placeholder="Bio.">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
   </template>
-
-
-  </div>
 
 </div>
 
