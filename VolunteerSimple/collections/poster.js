@@ -1,4 +1,4 @@
-export const Posts = new Mongo.Collection('Posts');
+export const Posters = new Mongo.Collection('Posters');
 
 oppro = new SimpleSchema({
     title: {
@@ -36,4 +36,4 @@ posterSchema = new SimpleSchema({
 });
 
 
-Posts.attachSchema(posterSchema);
+Posters.attachSchema(posterSchema);
