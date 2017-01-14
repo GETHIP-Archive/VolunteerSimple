@@ -1,85 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<body>
-
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="#" class="navbar-brand">VolunteerSimple</a>
-      </div>
-
-      <div>
-        <ul class="nav navbar-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Trending</a></li>
-        </ul>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Account<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-                <!--<li class="divider" role="separator"></li>-->
-                <li class="active"><a href="#">Saved</a></li>
-                <li><a href="#">Messages</a></li>
-              </ul>
-            </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
+<template name="signup">
 
   <div class='container'>
-
-  <input type="text" name="search" placeholder="Search...">
-
-  <template name="new">
-    <div class="container" id="profileContainer">
-        <form id="newProfile">
-          <div class="form-group">
-            <label for="firstName">First Name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="First">
-          </div>
-          <div class="form-group">
-            <label for="lastName">Last Name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Last">
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="bio" placeholder="youremail@realdomain">
-          </div>
-          <div class="form-group">
-            <label for="age">Age</label>
-            <input type="number" class="form-control" id="age" placeholder="Age">
-          </div>
-          <div class="form-group">
-            <label for="bio">Bio</label>
-            <input type="text" class="form-control" id="bio" placeholder="Bio.">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-    </div>
-  </template>
-
+    {{> new}}
 </div>
+</template>
 
-<footer>
-  <h4>Footer</h4>
-</footer>
 
-  <!--<script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>-->
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) ***NEEDS JQUERY? DOESNT IT HAVE IT? *** -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-
-</body>
-</html>
+<template name="new">
+  <div class="container" id="profileContainer">
+      <form id="newProfile">
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName" placeholder="First">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" class="form-control" id="lastName" placeholder="Last">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="bio" placeholder="youremail@realdomain">
+        </div>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="Age">
+        </div>
+        <div class="form-group">
+          <label for="bio">Bio</label>
+          <input type="text" class="form-control" id="bio" placeholder="Bio.">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+  </div>
+</template>

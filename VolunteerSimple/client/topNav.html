@@ -1,5 +1,4 @@
-<template name="profile">
-
+<template name="topNav">
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -8,13 +7,13 @@
 
       <div>
         <ul class="nav navbar-nav">
-          <li><a href="#">Home</a></li>
+          <li class="active"><a href="#">Home</a></li>
           <li><a href="#">Trending</a></li>
         </ul>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Account<span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li class="active" ><a href="#">Profile</a></li>
+                <li><a href="#">Profile</a></li>
                 <!--<li class="divider" role="separator"></li>-->
                 <li><a href="#">Saved</a></li>
                 <li><a href="#">Messages</a></li>
@@ -29,9 +28,4 @@
       </div>
     </div>
 </nav>
-
-  <div class='container'>
-
-  <input type="text" name="search" placeholder="Search...">
-  </div>
 </template>

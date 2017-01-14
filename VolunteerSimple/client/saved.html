@@ -1,75 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<template name="saved">
 
-<body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="#" class="navbar-brand">VolunteerSimple</a>
-      </div>
-
-      <div>
-        <ul class="nav navbar-nav">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Trending</a></li>
-        </ul>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Account<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-                <!--<li class="divider" role="separator"></li>-->
-                <li class="active"><a href="#">Saved</a></li>
-                <li><a href="#">Messages</a></li>
-              </ul>
-            </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
 
   <div class='container'>
 
   <input type="text" name="search" placeholder="Search...">
 
   <div class="row">
-   <template name="opportunity"><!-- should this be "savedOpportunity"? -->
-     <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title" placeholder="Saved Opportunity Title">{{opportunity.title}}</h3>
-          </div>
-          <div class="panel-body">
-            <img src="" name="pic" width="140" height="140" border="0"><!-- class="img-circle" -->
-            {{opportunity.description}}
-          </div>
-        </div>
-     </div>
-  </template>
+   {{> opportunity}}
 
 
   </div>
 
 </div>
-
-<footer>
-  <h4>Footer</h4>
-</footer>
-
-  <!--<script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>-->
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) ***NEEDS JQUERY? DOESNT IT HAVE IT? *** -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-
-</body>
-</html>
+</template>

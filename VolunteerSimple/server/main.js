@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Posters } from '../collections/poster.js';
-import { Clients } from '../collections/clients.js';
+import { Posters } from '../lib/poster.js';
+import { Clients } from '../lib/client.js';
 
 
 Meteor.startup(() => {

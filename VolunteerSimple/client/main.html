@@ -1,115 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>VolunteerSimple</title>
-  <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="profile.html">
-  <link rel="stylesheet" href="saved.html">
-  <link rel="stylesheet" href="signup.html">
-  <link rel="stylesheet" href="main.js">
-  <link href='css/bootstrap.css' rel='stylesheet'><!-- *** -->
-
-
-  <!-- Latest compiled and minified CSS-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript-->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
 </head>
 
-<body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a href="#" class="navbar-brand">VolunteerSimple</a>
-      </div>
+  <body>
+    {{> topNav}}
+    {{> content}}
+  </body>
 
-      <div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">Trending</a></li>
-        </ul>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Account<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-                <!--<li class="divider" role="separator"></li>-->
-                <li><a href="#">Saved</a></li>
-                <li><a href="#">Messages</a></li>
-              </ul>
-            </li>
-        </ul>
 
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-  <div class='container'>
-    <h1>Welcome to VolunteerSimple!</h1>
-
-  <input type="text" name="search" placeholder="Search...">
-
-  <div class="row">
-      <div class="col-sm-4">
-
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Opportunity</h3>
-          <!--<div class="divbutton">--><!-- mouseover effect in main.js/main.css -->
-          <button class="btn-lg btn-primary" type="button" style="float: right; display: none;">Save</button>
-          <!-- or <p align="right"> then button stays inside the grey area-->
-          <!--</div>-->
-        </div>
-        <div class="panel-body">
-          <img src="http://www.clipartkid.com/images/624/blue-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-PoY5qK-clipart.png" name="placeholder-pic" width="140" height="140" border="0">
-          [description]
-        </div>
-      </div>
-      </div>
-
-  <template name="opportunity">
-     <div class="col-sm-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title" placeholder="Opportunity Title">{{opportunity.title}}</h3>
-          </div>
-          <div class="panel-body">
-            <img src="" name="pic" width="140" height="140" border="0"><!-- class="img-circle" -->
-            {{opportunity.description}}
-          </div>
-        </div>
-     </div>
+  <template name="content">
+  {{>Template.dynamic template=content}}
   </template>
-
-
-  </div>
-
-</div>
-
-<footer>
-  <h4>Footer</h4>
-</footer>
-
-  <!--<script src="js/jquery-1.11.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.min.js"></script>-->
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) ***NEEDS JQUERY? DOESNT IT HAVE IT? *** -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
-
-</body>
-</html>
