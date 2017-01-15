@@ -5,13 +5,14 @@
   <title>VolunteerSimple</title>
 </head>
 
-
+<!-- Source point for loading templates -->
   <body>
     {{> topNav}}
     {{> content}}
   </body>
 
 
+<!-- Main dynamic loader for top level routing -->
   <template name="content">
   {{>Template.dynamic template=content}}
   </template>

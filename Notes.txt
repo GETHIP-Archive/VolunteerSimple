@@ -1,0 +1,4 @@
+Jan 14 Meeting To-Do?
+
+User roles plugin to manage roles?
+Functionality for isLogged in, is poster? ... does that come from user roles package?
