@@ -8,3 +8,31 @@ FlowRouter.route('/', {
     BlazeLayout.render("content", {content: "signup"});
   }
 });
+
+FlowRouter.route('/schedule', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "signup"});
+  }
+});
+
+FlowRouter.route('/profile', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "profile"});
+  }
+});
+
+FlowRouter.route('/details', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "signup"});
+  }
+});
+
+FlowRouter.route('/completed', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "signup"});
+  }
+});
