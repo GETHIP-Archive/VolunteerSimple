@@ -1,6 +1,6 @@
 export const Opportunity = new Mongo.Collection('Opportunity');
 
-Opportunity = new SimpleSchema({
+opportunity = new SimpleSchema({
     title: {
         type: String,
         label: "title"
@@ -14,7 +14,7 @@ Opportunity = new SimpleSchema({
       label: "createdAt"
     },
     accepts: {
-      type: String [],
+      type: [String],
       label: "accepts"
     },
     eventDate:{
@@ -27,4 +27,4 @@ Opportunity = new SimpleSchema({
     }
 });
 
-Opprotunities.attatchSchema(Opportunity);
+Opportunity.attachSchema(opportunity);

@@ -17,7 +17,7 @@ Meteor.startup(() => {
 Meteor.publish("Opportunity", function(){
  return Clients.find();
  });
-});
+
 
 Meteor.methods({
   'testMethod' : function(){
