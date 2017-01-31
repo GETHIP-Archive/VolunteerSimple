@@ -36,3 +36,10 @@ FlowRouter.route('/completed', {
     BlazeLayout.render("content", {content: "completed"});
   }
 });
+
+FlowRouter.route('/signup', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "signup"});
+  }
+});
