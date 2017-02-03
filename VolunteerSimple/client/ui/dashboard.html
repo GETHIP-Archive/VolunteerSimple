@@ -5,25 +5,32 @@
     <input type="text" name="search" placeholder="Search...">
 
     <div class="row">
-        <div class="col-sm-4">
-
-        <div class="panel panel-info">
+      <div class="cpportunityDiv">
+        <div class="panel panel-info"><!--style="width=200 px;"-->
           <div class="panel-heading">
-            <h3 class="panel-title">Opportunity</h3>
+            <h2 class="panel-title">Opportunity</h2>
             <!--<div class="divbutton">--><!-- mouseover effect in main.js/main.css -->
-            <button class="btn-lg btn-primary" type="button" style="float: right; display: none;">Save</button>
+            <button class="btn-lg btn-primary" type="button" style="float: right;">Share</button>
+            <button class="btn-lg btn-primary" type="button" style="float: right;">Save</button>
+            <!-- display: none;-->
             <!-- or <p align="right"> then button stays inside the title area-->
             <!--</div>-->
           </div>
           <div class="panel-body">
             <img src="http://www.clipartkid.com/images/624/blue-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-PoY5qK-clipart.png" name="placeholder-pic" width="140" height="140" border="0">
-            [description]
-            Address:
-            Phone number:
-            Email:
+            description
+            <p>Address: </p>
+            <p>Phone number: </p>
+            <p>Email: </p>
+
+            <!--{{> organizationDescription}}
+            <p>Address: {{> organizationAddress}}</p>
+            <p>Phone number: {{> organizationPhoneNumber}}</p>
+            <p>Email: {{> organizationEmail}}</p>-->
           </div>
         </div>
         </div>
+
     </div>
   </div>
 </template>
