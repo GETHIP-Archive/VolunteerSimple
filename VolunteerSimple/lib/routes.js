@@ -26,7 +26,7 @@ FlowRouter.route('/profile', {
 FlowRouter.route('/details', {
   name: "sHome",
   action: function() {
-    BlazeLayout.render("content", {content: "signup"});
+    BlazeLayout.render("content", {content: "details"});
   }
 });
 
