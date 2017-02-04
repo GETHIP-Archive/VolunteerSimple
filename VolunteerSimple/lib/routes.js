@@ -10,14 +10,21 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/schedule', {
-  name: "sHome",
+  name: "saved",
+  action: function() {
+    BlazeLayout.render("content", {content: "schedule"});
+  }
+});
+
+FlowRouter.route('/messages', {
+  name: "messages",
   action: function() {
     BlazeLayout.render("content", {content: "schedule"});
   }
 });
 
 FlowRouter.route('/profile', {
-  name: "sHome",
+  name: "profile",
   action: function() {
     BlazeLayout.render("content", {content: "profile"});
   }

@@ -3,6 +3,10 @@
     border-color: #155b55;
   }
 
+  .navbar {
+    border-radius: 0px;
+}
+
   .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #fff;
     background-color: #0f423d;
