@@ -2,12 +2,104 @@
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
     <input type="text" name="search" placeholder=" Search..." class="search">
-      <div class="row">
+    <div class="row">
 
-        {{> opportunity}}
-        {{> opportunity}}
-        {{> opportunity}}
+      {{> opportunity}}
+      {{> opportunity}}
+      {{> opportunity}}
 
-      </div>
+
     </div>
+    <!--My Opportunities Section-->
+    <div class="row">
+      <div class="col-md-9">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">My Opportunities</h3>
+          </div>
+          <div class="panel-body">
+            <ol>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <!--Add Button-->
+      <div class="col-md-3">
+        <div class="well">
+          <center>
+            <h4>Add an Opportunity</h4>
+            <hr>
+            <button type="button" class="btn btn-success addOpportunities">
+              <h4>Add</h4>
+            </button>
+          </center>
+        </div>
+        <!--Slots-->
+        <div class="well">
+          <p>
+            # Slots
+            <br>
+            # Volunteers
+          </p>
+        </div>
+      </div>
+      <!--Notifications-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Notifications</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+        <!--Pinned-->
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pinned</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+          <!--Send Notification-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Send Notification</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+        <!--Upcoming-->
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Upcoming</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
 </template>
