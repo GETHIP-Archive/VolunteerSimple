@@ -113,6 +113,16 @@ input[type=text]:focus {
 	bottom: 14px;
 }
 
+.orgOppList {
+	position: relative;
+	height: 480px;
+}
+
+.orgVolunteerBox {
+	position: relative;
+	height: 285px;
+}
+
 span{
     display:block;
 }
@@ -130,6 +140,43 @@ span:hover{
 	position: relative;
     background:lightgrey;
 	right: -60;
+}
+
+.orgEditBio {
+    resize: none;
+	position: relative;
+	bottom: 34px;
+}
+
+.orgEditBioBox {
+	Height: 170px;
+}
+
+.orgEditButtons {
+	float: right;
+}
+
+.orgEditInfo {
+	position: relative;
+	bottom: 37px;
+}
+
+.orgEditTitle {
+	position: relative;
+	top: -18px;
+	left: 20px;
+}
+
+.orgEditTitleBox {
+	height: 50px;
+}
+
+.orgEditTitleInput {
+	position: relative;
+	width: 750px;
+	right: 15px;
+	bottom: 59px;
+	float: right;
 }
 
 footer {
