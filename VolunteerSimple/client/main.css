@@ -33,12 +33,34 @@ h1 {
 }
 
 .panel-info > .panel-heading {
-  background-color: #e0fcf9;
+  background-color: #d0edea;
 }
 
 .panel-heading {
-  color: #167a70;
+  color: #155b55;
   border-color: #bce8f1;
+  background-color: #d0edea;
+}
+
+.panel-default > .panel-heading {
+  color: #155b55;
+  border-color: #bce8f1;
+  background-color: #d0edea;
+}
+
+.well {
+  color: #155b55;
+  background-color: #d0edea;
+}
+
+.addOpportunities {
+  background-color: #26a69a;
+  border-color: #155b55;
+}
+
+.addOpportunities:hover {
+  background-color: #155b55;
+  border-color: #155b55;
 }
 
 .btn-primary {
@@ -50,6 +72,10 @@ h1 {
     color: #fff;
     background-color: #155b55;
     border-color: #155b55;
+  }
+
+  hr {
+    color: #26a69a;
   }
 
 .input[type=text] {
@@ -72,7 +98,7 @@ input[type=text]:focus {
 }
 
 .addOpportunities {
-	padding: 2% 20%;	
+	padding: 2% 20%;
 }
 
 .orgEditButton {
