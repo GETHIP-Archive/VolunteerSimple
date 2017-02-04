@@ -36,6 +36,12 @@ FlowRouter.route('/details/:_id', {
     BlazeLayout.render("content", {content: "details"});
   }
 });
+FlowRouter.route('/details', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "details"});
+  }
+});
 
 FlowRouter.route('/completed', {
   name: "sHome",
@@ -48,5 +54,12 @@ FlowRouter.route('/signup', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "signup"});
+  }
+});
+
+FlowRouter.route('/create', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "create"});
   }
 });
