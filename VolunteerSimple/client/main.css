@@ -1,10 +1,52 @@
+.navbar-inverse {
+    background-color: #155b55;
+    border-color: #155b55;
+  }
+
+  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #0f423d;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+
+.badge {
+    background-color: #0f423d;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
 h1 {
   font-family: "Arial", cursive;
 }
 
-h4 {
-
+.search {
+  margin-bottom: 15px;
 }
+
+.panel-info > .panel-heading {
+  background-color: #e0fcf9;
+}
+
+.panel-heading {
+  color: #167a70;
+  border-color: #bce8f1;
+}
+
+.btn-primary {
+  background-color: #26a69a;
+  border-color: #155b55;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #155b55;
+    border-color: #155b55;
+  }
 
 .input[type=text] {
     width: 130px;
