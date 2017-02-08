@@ -68,6 +68,10 @@ h1 {
   border-color: #155b55;
 }
 
+/*.btn > .btn-primary > .orgEditButton {
+  background-color: #26a69a;//when clicked and then cursor moved
+}*/
+
 .btn-primary:hover {
     color: #fff;
     background-color: #155b55;
