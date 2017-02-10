@@ -21,21 +21,34 @@ Meteor.publish("Opportunity", function(){
 });
 
 Accounts.onCreateUser(function (options, user) {
+  //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
+  console.log(user._id);
   Clients.insert({
     firstName: "",
     lastName: "",
     account: user._id,
     saved: []
   })
-  console.log("Added User " + user._id);
   return user;
 });
 
 Meteor.methods({
-  'createUsers' : function(){
-
+  'modSignUp' : function(oid, uId, mode){
+    //Add Validation to prevent duplicate entries
+    if(Meteor.user._id == uId){
+      if(mode == "add"){
+        Opportunity.update({id: oId}, {$push: {accepts: uId}});
+    }else if(mode == "remove"){
+      Opportunity.update({id: oId}, {$pull: {accepts: uId}});
+      }
+    }
   },
   'createOpp' : function(oppo){
+    //Add security for if in role
     Opportunity.insert(oppo);
+  },
+  'updateInfo' : function(oppo){
+    //@WIP
+    //Clients.update({id: uId}, {$set: {firstName: fName,}})
   }
 });
