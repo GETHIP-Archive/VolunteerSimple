@@ -5,22 +5,37 @@ import { Opportunity } from '../lib/opportunity.js';
 
 
 Meteor.startup(() => {
-  Meteor.publish("Posters", function(){
-   return Posts.find();
- });
+  //Meteor.call('createUsers');
+});
 
- Meteor.publish("Clients", function(){
-  return Clients.find();
-  });
+Meteor.publish("Posters", function(){
+  return Posts.find({accoint: Meteor.user()._id});
+});
+
+Meteor.publish("Clients", function(){
+  return Clients.find({account: Meteor.user()._id});
 });
 
 Meteor.publish("Opportunity", function(){
- return Clients.find();
- });
+  return Clients.find();
+});
 
+Accounts.onCreateUser(function (options, user) {
+  Clients.insert({
+    firstName: "",
+    lastName: "",
+    account: user._id,
+    saved: []
+  })
+  console.log("Added User " + user._id);
+  return user;
+});
 
 Meteor.methods({
-  'testMethod' : function(){
+  'createUsers' : function(){
 
+  },
+  'createOpp' : function(oppo){
+    Opportunity.insert(oppo);
   }
 });
