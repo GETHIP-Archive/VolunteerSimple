@@ -5,11 +5,11 @@ import { Opportunity } from '../lib/opportunity.js';
 
 
 Meteor.startup(() => {
-  //Meteor.call('createUsers');
+
 });
 
 Meteor.publish("Posters", function(){
-  return Posts.find({accoint: Meteor.user()._id});
+  return Posters.find({account: Meteor.user()._id});
 });
 
 Meteor.publish("Clients", function(){
@@ -17,29 +17,29 @@ Meteor.publish("Clients", function(){
 });
 
 Meteor.publish("Opportunity", function(){
-  return Clients.find();
+  return Opportunity.find();
 });
 
 Accounts.onCreateUser(function (options, user) {
   //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
   console.log(user._id);
   Clients.insert({
-    firstName: "",
-    lastName: "",
+    firstName: "null",
+    lastName: "null",
     account: user._id,
-    saved: []
+    saved: ["null"]
   })
   return user;
 });
 
 Meteor.methods({
-  'modSignUp' : function(oid, uId, mode){
+  'modSignUp' : function(oId, uId, mode){
     //Add Validation to prevent duplicate entries
     if(Meteor.user._id == uId){
       if(mode == "add"){
-        Opportunity.update({id: oId}, {$push: {accepts: uId}});
+        Opportunity.update({_id: oId}, {$push: {accepts: uId}});
     }else if(mode == "remove"){
-      Opportunity.update({id: oId}, {$pull: {accepts: uId}});
+        Opportunity.update({_id: oId}, {$pull: {accepts: uId}});
       }
     }
   },
@@ -47,8 +47,28 @@ Meteor.methods({
     //Add security for if in role
     Opportunity.insert(oppo);
   },
-  'updateInfo' : function(oppo){
-    //@WIP
-    //Clients.update({id: uId}, {$set: {firstName: fName,}})
-  }
-});
+  'editOpp': function(oId, oTitle, oDesc, oDate){
+    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
+      Opportunity.update({_id: oId}, {$set: {title: oTitle, description: oDesc, eventDate: oDate}});
+    }
+  },
+  'removeOpp': function(oId){
+    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
+      Opportunity.remove({_id: oId});
+    }
+  },
+  'updateClient' : function(aId, fName, lName){
+    if(Meteor.user._id == aId){
+    Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
+    }
+  },
+  'modSave': function(aId, oId, mode){
+    if(Meteor.user._id == aId){
+      if(mode == "add"){
+        Clients.update({account: aId}, {$push: {saved: oId}});
+    }else if(mode == "remove"){
+        Clients.update({account: aId}, {$pull: {saved: oId}});
+      }
+    }
+
+}});
