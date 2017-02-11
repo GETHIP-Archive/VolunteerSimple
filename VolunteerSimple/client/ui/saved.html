@@ -3,14 +3,34 @@
 
 
   <div class='container'>
-
   <input type="text" name="search" placeholder="Search...">
-
   <div class="row">
+    <div class="col-md-3">
+<h2> Ideas</h2>
+   {{> opportunity}}
+
+
+</div>
+  <div class="col-md-9">
+<h2> Progress</h2>
+  <div class="progress">
    {{> opportunity}}
 
 
   </div>
+  <hr>
+<h2> Completed</h2>
+  <div class="completed">
+   {{> opportunity}}
+
+
+  </div>
+</div>
+</div>
+
+
+
+
 
 </div>
 </template>

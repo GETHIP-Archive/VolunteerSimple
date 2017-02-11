@@ -9,10 +9,10 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/schedule', {
+FlowRouter.route('/saved', {
   name: "sHome",
   action: function() {
-    BlazeLayout.render("content", {content: "signup"});
+    BlazeLayout.render("content", {content: "saved"});
   }
 });
 
