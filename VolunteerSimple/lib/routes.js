@@ -50,3 +50,10 @@ FlowRouter.route('/signup', {
     BlazeLayout.render("content", {content: "signup"});
   }
 });
+
+FlowRouter.route('/opportunity-create', {
+  name: "opportunity-create",
+  action: function() {
+    BlazeLayout.render("content", {content: "opportunity-create"});
+  }
+});
