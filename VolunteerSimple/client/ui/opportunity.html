@@ -1,25 +1,13 @@
 <template name="opportunity">
-  <div class="col-md-4">
-    <div class="opportunityDiv">
+   <div class="col-sm-4"> 
       <div class="panel panel-default">
-        <div class="panel-heading clearfix">
-      <h4 class="panel-title pull-left" style="padding-top: 7.5px;">Opportunity</h4>
-      <div class="btn-group pull-right">
-            <button type="button" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-primary">Share</button>
-          </div>
+        <div class="panel-heading">
+          <h3 class="panel-title" placeholder="Opportunity Title">{{opportunity.title}}</h3>
         </div>
         <div class="panel-body">
-          <!--<img src="{{> image}}" name="{{> placeholder-pic}}" width="140" height="140" border="0">-->
-          <p>Address: </p>
-          <p>Phone number: </p>
-          <p>Email: </p>
-          <!--{{> organizationDescription}}
-          <p>Address: {{> organizationAddress}}</p>
-          <p>Phone number: {{> organizationPhoneNumber}}</p>
-          <p>Email: {{> organizationEmail}}</p>-->
+          <img src="" name="pic" width="140" height="140" border="0"><!-- class="img-circle" -->
+          <!-- {{opportunity.description}} -->
         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </template>
