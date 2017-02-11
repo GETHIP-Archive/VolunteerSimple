@@ -13,10 +13,11 @@ clientSchema = new SimpleSchema({
         type: String,
         label: "accountId"
     },
-    taken: {
+    saved: {
       type: [String],
-      label: "taken"
-    }
+      label: "saved"
+    },
+
 });
 
 

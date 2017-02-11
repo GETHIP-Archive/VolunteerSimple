@@ -1,10 +1,82 @@
+.navbar-inverse {
+    background-color: #155b55;
+    border-color: #155b55;
+  }
+
+  .navbar {
+    border-radius: 0px;
+}
+
+  .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #0f423d;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+
+.badge {
+    background-color: #0f423d;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
 h1 {
-
+  font-family: "Arial", cursive;
 }
 
-h4 {
-
+.search {
+  margin-bottom: 15px;
 }
+
+.panel-info > .panel-heading {
+  background-color: #d0edea;
+}
+
+.panel-heading {
+  color: #155b55;
+  border-color: #bce8f1;
+  background-color: #d0edea;
+}
+
+.panel-default > .panel-heading {
+  color: #155b55;
+  border-color: #bce8f1;
+  background-color: #d0edea;
+}
+
+.well {
+  color: #155b55;
+  background-color: #d0edea;
+}
+
+.addOpportunities {
+  background-color: #26a69a;
+  border-color: #155b55;
+}
+
+.addOpportunities:hover {
+  background-color: #155b55;
+  border-color: #155b55;
+}
+
+.btn-primary {
+  background-color: #26a69a;
+  border-color: #155b55;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #155b55;
+    border-color: #155b55;
+  }
+
+  hr {
+    color: #26a69a;
+  }
 
 .input[type=text] {
     width: 130px;
@@ -23,6 +95,88 @@ input[type=text]:focus {
 
 .panel {
 
+}
+
+.addOpportunities {
+	padding: 2% 20%;
+}
+
+.orgEditButton {
+	height: 18px;
+	position: relative;
+	bottom: -1px;
+	float: right;
+}
+
+.orgEdit {
+	position: relative;
+	bottom: 14px;
+}
+
+.orgOppList {
+	position: relative;
+	height: 480px;
+}
+
+.orgVolunteerBox {
+	position: relative;
+	height: 285px;
+}
+
+span{
+    display:block;
+}
+
+span:hover::before{
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 22px;
+  top: 0;
+  right: 0;
+  z-index:-1;
+}
+span:hover{
+	position: relative;
+    background:lightgrey;
+	right: -60;
+}
+
+.orgEditBio {
+    resize: none;
+	position: relative;
+	bottom: 34px;
+}
+
+.orgEditBioBox {
+	Height: 170px;
+}
+
+.orgEditButtons {
+	float: right;
+}
+
+.orgEditInfo {
+	position: relative;
+	bottom: 37px;
+}
+
+.orgEditTitle {
+	position: relative;
+	top: -18px;
+	left: 20px;
+}
+
+.orgEditTitleBox {
+	height: 50px;
+}
+
+.orgEditTitleInput {
+	position: relative;
+	width: 750px;
+	right: 15px;
+	bottom: 59px;
+	float: right;
 }
 
 footer {

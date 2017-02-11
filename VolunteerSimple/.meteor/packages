@@ -23,3 +23,7 @@ kadira:flow-router
 aldeed:simple-schema
 aldeed:collection2
 kadira:blaze-layout
+
+alanning:roles
+
+accounts-ui
