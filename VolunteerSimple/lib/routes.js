@@ -32,7 +32,7 @@ FlowRouter.route('/profile', {
 
 FlowRouter.route('/details/:_id', {
   name: "sHome",
-  action: function() {
+  action: function(params) {
     BlazeLayout.render("content", {content: "details"});
   }
 });
