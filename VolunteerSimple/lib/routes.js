@@ -32,22 +32,29 @@ FlowRouter.route('/profile', {
 });
 
 FlowRouter.route('/details/:_id', {
-  name: "sHome",
+  name: "details",
   action: function() {
     BlazeLayout.render("content", {content: "details"});
   }
 });
 
 FlowRouter.route('/completed', {
-  name: "sHome",
+  name: "completed",
   action: function() {
     BlazeLayout.render("content", {content: "completed"});
   }
 });
 
 FlowRouter.route('/signup', {
-  name: "sHome",
+  name: "signup",
   action: function() {
     BlazeLayout.render("content", {content: "signup"});
+  }
+});
+
+FlowRouter.route('/opportunity-create', {
+  name: "opportunity-create",
+  action: function() {
+    BlazeLayout.render("content", {content: "opportunity-create"});
   }
 });
