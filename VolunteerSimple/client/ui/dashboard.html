@@ -1,37 +1,105 @@
 <template name="dashboard">
-    <div class='container'>
-      <h1>Welcome to VolunteerSimple!</h1>
-
-    <input type="text" name="search" placeholder="Search...">
-
+  <div class='container'>
+    <h1>Welcome to VolunteerSimple!</h1>
+    <input type="text" name="search" placeholder=" Search..." class="search">
     <div class="row">
-      <div class="cpportunityDiv">
-        <div class="panel panel-info"><!--style="width=200 px;"-->
+
+      {{> opportunity}}
+      {{> opportunity}}
+      {{> opportunity}}
+
+
+    </div>
+    <!--My Opportunities Section-->
+    <div class="row">
+      <div class="col-md-9">
+        <div class="panel panel-default">
           <div class="panel-heading">
-            <h2 class="panel-title">Opportunity</h2>
-            <!--<div class="divbutton">--><!-- mouseover effect in main.js/main.css -->
-            <button class="btn-lg btn-primary" type="button" style="float: right;">Share</button>
-            <button class="btn-lg btn-primary" type="button" style="float: right;">Save</button>
-            <!-- display: none;-->
-            <!-- or <p align="right"> then button stays inside the title area-->
-            <!--</div>-->
+            <h3 class="panel-title">My Opportunities</h3>
           </div>
           <div class="panel-body">
-            <img src="http://www.clipartkid.com/images/624/blue-box-clip-art-at-clker-com-vector-clip-art-online-royalty-free-PoY5qK-clipart.png" name="placeholder-pic" width="140" height="140" border="0">
-            <!--<img src="{{> image}}" name="{{> placeholder-pic}}" width="140" height="140" border="0">-->
-            description
-            <p>Address: </p>
-            <p>Phone number: </p>
-            <p>Email: </p>
-
-            <!--{{> organizationDescription}}
-            <p>Address: {{> organizationAddress}}</p>
-            <p>Phone number: {{> organizationPhoneNumber}}</p>
-            <p>Email: {{> organizationEmail}}</p>-->
+            <ol>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn btn-primary orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+            </ol>
           </div>
         </div>
+      </div>
+      <!--Add Button-->
+      <div class="col-md-3">
+        <div class="well">
+          <center>
+            <h4>Add an Opportunity</h4>
+            <hr>
+            <button type="button" class="btn btn-success addOpportunities">
+              <h4>Add</h4>
+            </button>
+          </center>
         </div>
+        <!--Slots-->
+        <div class="well">
+          <p>
+            # Slots
+            <br>
+            # Volunteers
+          </p>
+        </div>
+      </div>
+      <!--Notifications-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Notifications</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+        <!--Pinned-->
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Pinned</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+          <!--Send Notification-->
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Send Notification</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+        <!--Upcoming-->
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Upcoming</h3>
+            </div>
+            <div class="panel-body">
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     </div>
   </div>
+
+
+
+
+
+
 </template>

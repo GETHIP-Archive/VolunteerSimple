@@ -5,6 +5,5 @@ VolunteerSimple project for GETHIP 2016-17.
 - Abby Brooks (Project Manager)
 - Jacob Gideon (Architect)
 - Cindy France
-- Lucas
+- Lucas Anderson
 - Leauna Henke
-- Colton Willnerd
