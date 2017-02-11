@@ -12,6 +12,14 @@
     background-color: #0f423d;
 }
 
+.navbar-nav .active {
+    background-color: #155b55;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #0f423d;
+}
+
 .navbar-inverse .navbar-nav > li > a {
   color: #fff;
 }
@@ -63,12 +71,17 @@ h1 {
   border-color: #155b55;
 }
 
-.btn-primary {
+.btn {
   background-color: #26a69a;
   border-color: #155b55;
+  color: #fff;
 }
 
-.btn-primary:hover {
+/*.btn > .btn-primary > .orgEditButton {
+  background-color: #26a69a;//when clicked and then cursor moved
+}*/
+
+.btn:hover {
     color: #fff;
     background-color: #155b55;
     border-color: #155b55;
@@ -106,6 +119,15 @@ input[type=text]:focus {
 	position: relative;
 	bottom: -1px;
 	float: right;
+}
+
+.orgEditButton:focus {
+	background-color: #155b55;
+  color: #fff;
+}
+
+.btn:focus {
+  color: #fff;
 }
 
 .orgEdit {
