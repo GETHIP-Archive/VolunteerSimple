@@ -9,10 +9,11 @@ FlowRouter.route('/', {
   }
 });
 
+
 FlowRouter.route('/schedule', {
   name: "saved",
   action: function() {
-    BlazeLayout.render("content", {content: "schedule"});
+    BlazeLayout.render("content", {content: "saved"});
   }
 });
 
