@@ -1,6 +1,7 @@
 <template name="dashboard">
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
+
     <input type="text" name="search" placeholder=" Search..." class="search">
 
     <div class="well">
@@ -13,7 +14,9 @@
         </ol>
     </div>
 
+
     <div class="row">
+
 
     {{#if isInRole 'client'}}
     <div class="row">
