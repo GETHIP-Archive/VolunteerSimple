@@ -4,12 +4,18 @@
     <!--<input type="text" name="search" placeholder=" Search..." class="search">-->
     <div class="row">
 
-      {{> opportunity}}
-      {{> opportunity}}
-      {{> opportunity}}
 
-
+    {{#if isInRole 'client'}}
+    <div class="row">
+    {{#each post}}
+      {{> opportunity}}
+      {{/each}}
     </div>
+    {{/if}}
+
+
+    {{#if isInRole 'poster'}}
+
     <!--My Opportunities Section-->
     <div class="row">
       <div class="col-md-9">
@@ -28,6 +34,7 @@
           </div>
         </div>
       </div>
+
       <!--Add Button-->
       <div class="col-md-3">
         <div class="well">
@@ -92,9 +99,8 @@
           </div>
         </div>
       </div>
-
-
     </div>
+          {{/if}}
   </div>
 
 
