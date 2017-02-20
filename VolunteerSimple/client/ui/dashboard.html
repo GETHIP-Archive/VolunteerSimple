@@ -1,7 +1,20 @@
 <template name="dashboard">
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
-    <!--<input type="text" name="search" placeholder=" Search..." class="search">-->
+
+    <input type="text" name="search" placeholder=" Search..." class="search">
+
+    <div class="well">
+        <ol>
+          <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
+          <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
+          <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
+          <li><span style="orgListHighLight">Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
+          <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
+        </ol>
+    </div>
+
+
     <div class="row">
 
 
@@ -12,6 +25,10 @@
       {{/each}}
     </div>
     {{/if}}
+
+    </div>
+
+<!-- VOLUNTEER DASHBOARD ABOVE; ORGANAZATION DASHBOARD BELOW -->
 
 
     {{#if isInRole 'poster'}}
@@ -77,7 +94,7 @@
               <p>...</p>
             </div>
           </div>
-          <!--Send Notification-->
+          <!--Send Notification
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Send Notification</h3>
@@ -85,7 +102,7 @@
             <div class="panel-body">
               <p>...</p>
             </div>
-          </div>
+          </div>-->
         </div>
         <!--Upcoming-->
         <div class="col-md-3">
@@ -99,13 +116,9 @@
           </div>
         </div>
       </div>
+
     </div>
           {{/if}}
   </div>
-
-
-
-
-
 
 </template>
