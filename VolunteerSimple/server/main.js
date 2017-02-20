@@ -2,9 +2,13 @@ import { Meteor } from 'meteor/meteor';
 import { Posters } from '../lib/poster.js';
 import { Clients } from '../lib/client.js';
 import { Opportunity } from '../lib/opportunity.js';
+import { Template } from 'meteor/templating';
+//import { Session } from 'meteor/session'
+
 
 
 Meteor.startup(() => {
+
 
 });
 
@@ -23,12 +27,8 @@ Meteor.publish("Opportunity", function(){
 Accounts.onCreateUser(function (options, user) {
   //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
   console.log(user._id);
-  Clients.insert({
-    firstName: "null",
-    lastName: "null",
-    account: user._id,
-    saved: ["null"]
-  })
+  //console.log(Session.get("roger"));
+
   return user;
 });
 
@@ -62,6 +62,20 @@ Meteor.methods({
     Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
     }
   },
+  'postSignup': function(uId, role, fName, lName ){
+    if(role == "client"){
+      Roles.addUsersToRoles(uId, role);
+      Clients.insert({
+        firstName: fName,
+        lastName: lName,
+        account: uId,
+        saved: ["null"]
+      })
+    }else if(role == "poster"){
+      Roles.addUsersToRoles(uId, role);
+      //Insert poster into DB
+    }
+  },
   'modSave': function(aId, oId, mode){
     if(Meteor.user._id == aId){
       if(mode == "add"){
@@ -70,5 +84,5 @@ Meteor.methods({
         Clients.update({account: aId}, {$pull: {saved: oId}});
       }
     }
-
-}});
+},
+});
