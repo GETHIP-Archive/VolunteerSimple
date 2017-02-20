@@ -1,6 +1,7 @@
 <template name="dashboard">
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
+
     <input type="text" name="search" placeholder=" Search..." class="search">
 
     <div class="well">
@@ -13,15 +14,24 @@
         </ol>
     </div>
 
+
     <div class="row">
 
+
+    {{#if isInRole 'client'}}
+    <div class="row">
+    {{#each post}}
       {{> opportunity}}
-      {{> opportunity}}
-      {{> opportunity}}
+      {{/each}}
+    </div>
+    {{/if}}
 
     </div>
 
 <!-- VOLUNTEER DASHBOARD ABOVE; ORGANAZATION DASHBOARD BELOW -->
+
+
+    {{#if isInRole 'poster'}}
 
     <!--My Opportunities Section-->
     <div class="row">
@@ -41,6 +51,7 @@
           </div>
         </div>
       </div>
+
       <!--Add Button-->
       <div class="col-md-3">
         <div class="well">
@@ -107,6 +118,7 @@
       </div>
 
     </div>
+          {{/if}}
   </div>
 
 </template>
