@@ -38,6 +38,9 @@ FlowRouter.route('/details/:_id', {
   }
 });
 
+
+
+
 FlowRouter.route('/completed', {
   name: "completed",
   action: function() {
