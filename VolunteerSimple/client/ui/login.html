@@ -1,0 +1,24 @@
+<template name="login">
+
+  <div class='container'>
+    {{> newL}}
+</div>
+</template>
+
+
+<template name="newL">
+  <div class="container" id="usernameContainer">
+      <form id="newProfile">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="text" class="form-control" id="password" placeholder="password">
+        </div>
+
+        <button type="submit" class="btn">Log In</button>
+      </form>
+  </div>
+</template>
