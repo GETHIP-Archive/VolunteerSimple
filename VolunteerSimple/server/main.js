@@ -8,8 +8,7 @@ import { Template } from 'meteor/templating';
 
 
 Meteor.startup(() => {
-
-
+  Meteor.call("addData");
 });
 
 Meteor.publish("Posters", function(){
@@ -70,10 +69,14 @@ Meteor.methods({
         lastName: lName,
         account: uId,
         saved: ["null"]
-      })
+      });
     }else if(role == "poster"){
       Roles.addUsersToRoles(uId, role);
-      //Insert poster into DB
+      Posters.insert({
+        firstName: fName,
+        lastName: lName,
+        account: uId,
+      });
     }
   },
   'modSave': function(aId, oId, mode){
@@ -85,4 +88,16 @@ Meteor.methods({
       }
     }
 },
+'addData': function(){
+  for(var i = 0; i < 10; i++){
+    Opportunity.insert({
+      title: "GET HIP" + i,
+      description: "SAMPLE OPP." + i,
+      createdAt: new Date(),
+      accepts: ["123"],
+      eventDate: new Date(),
+      owner: "Ahh77887"
+    });
+  }
+}
 });

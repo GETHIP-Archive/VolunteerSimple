@@ -9,6 +9,12 @@ FlowRouter.route('/', {
   }
 });
 
+FlowRouter.route('/login', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "login"});
+  }
+});
 
 FlowRouter.route('/schedule', {
   name: "saved",
@@ -37,9 +43,6 @@ FlowRouter.route('/details/:_id', {
     BlazeLayout.render("content", {content: "details"});
   }
 });
-
-
-
 
 FlowRouter.route('/completed', {
   name: "completed",

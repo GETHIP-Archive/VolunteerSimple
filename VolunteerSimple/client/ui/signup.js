@@ -9,7 +9,10 @@ Template.newS.events({
         var cpassword = event.target.cpassword.calue;
         var fName = event.target.fName.value;
         var lName = event.target.lName.value;
+        var role = event.target.bio.value;
+
         if(true){
+          console.log(role);
         Accounts.createUser({
             email: emailVar,
             password: passwordVar
@@ -19,7 +22,7 @@ Template.newS.events({
             // Template.instance().state.set('errorm', error.reason);
            }else{
             // Template.instance().state.set('errorm', "");
-          Meteor.call("postSignup", Meteor.user()._id, "client", fName, lName);
+          Meteor.call("postSignup", Meteor.user()._id, role, fName, lName);
             FlowRouter.go("/");
           }
         });

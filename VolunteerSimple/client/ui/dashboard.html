@@ -2,8 +2,12 @@
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
 
-    <input type="text" name="search" placeholder=" Search..." class="search">
 
+
+    <div class="row">
+
+
+    {{#if isInRole 'client'}}
     <div class="well">
         <ol>
           <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
@@ -14,12 +18,8 @@
         </ol>
     </div>
 
-
     <div class="row">
-
-
-    {{#if isInRole 'client'}}
-    <div class="row">
+      
     {{#each post}}
       {{> opportunity}}
       {{/each}}

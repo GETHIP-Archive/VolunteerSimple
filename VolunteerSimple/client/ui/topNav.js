@@ -20,5 +20,11 @@ Template.topNav.events ({
   },
   'click .signup': function(){
     FlowRouter.go("/signup");
+  },
+  'click .login': function(){
+    FlowRouter.go("/login");
+  },
+  'click .profile': function(){
+    FlowRouter.go("/profile");
   }
 })

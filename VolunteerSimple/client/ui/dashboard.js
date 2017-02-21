@@ -4,7 +4,7 @@ Meteor.subscribe("Opportunity");
 
 Template.dashboard.helpers({
     post: function() {
-      console.log(Opportunity.find({_id: "5EtGWqhZnfN9eDdAo"}).fetch());
+      console.log(Opportunity.find().fetch);
         return Opportunity.find();
     }
 });
