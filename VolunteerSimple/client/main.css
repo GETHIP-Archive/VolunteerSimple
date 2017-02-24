@@ -121,7 +121,21 @@ input[type=text]:focus {
 	float: right;
 }
 
+.deleteBtn {
+	height: 20px;
+  width: 10px;
+  border-radius: 50%;
+	position: relative;
+	bottom: -1px;
+	float: right;
+}
+
 .orgEditButton:focus {
+	background-color: #155b55;
+  color: #fff;
+}
+
+.deleteBtn:focus {
 	background-color: #155b55;
   color: #fff;
 }
@@ -131,6 +145,11 @@ input[type=text]:focus {
 }
 
 .orgEdit {
+	position: relative;
+	bottom: 14px;
+}
+
+.delete {
 	position: relative;
 	bottom: 14px;
 }
