@@ -58,10 +58,10 @@ FlowRouter.route('/signup', {
   }
 });
 
-FlowRouter.route('/opportunity-create', {
-  name: "opportunity-create",
+FlowRouter.route('/new', {
+  name: "new",
   action: function() {
-    BlazeLayout.render("content", {content: "opportunity-create"});
+    BlazeLayout.render("content", {content: "details"});
   }
 });
 

@@ -46,9 +46,9 @@ Meteor.methods({
     //Add security for if in role
     Opportunity.insert(oppo);
   },
-  'editOpp': function(oId, oTitle, oDesc, oDate){
+  'updateOpp': function(oId, data){
     if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
-      Opportunity.update({_id: oId}, {$set: {title: oTitle, description: oDesc, eventDate: oDate}});
+      Opportunity.update({_id: oId}, {$set: data});
     }
   },
   'removeOpp': function(oId){
@@ -89,15 +89,15 @@ Meteor.methods({
     }
 },
 'addData': function(){
-  for(var i = 0; i < 10; i++){
-    Opportunity.insert({
-      title: "GET HIP" + i,
-      description: "SAMPLE OPP." + i,
-      createdAt: new Date(),
-      accepts: ["123"],
-      eventDate: new Date(),
-      owner: "Ahh77887"
-    });
-  }
+  // for(var i = 0; i < 10; i++){
+  //   Opportunity.insert({
+  //     title: "GET HIP" + i,
+  //     description: "SAMPLE OPP." + i,
+  //     createdAt: new Date(),
+  //     accepts: ["123"],
+  //     eventDate: new Date(),
+  //     owner: "Ahh77887"
+  //   });
+  // }
 }
 });
