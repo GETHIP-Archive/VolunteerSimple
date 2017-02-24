@@ -4,6 +4,7 @@ import '../../lib/routes.js'
 
 Meteor.subscribe("Opportunity");
 
+
 var empty = {
   title: "",
   description: "",
@@ -50,13 +51,24 @@ Template.details.events({
     }
 
     if(FlowRouter.getRouteName() == "new"){
+    Meteor.call("createOpp", opp, function(error, id){
+        checkValid(id);
+    });
 
-      Meteor.call("createOpp", opp)
-      //***Check if create good***
-      //Get id of newly created post
-      //FlowRouter.go("/details/");
     }else if(FlowRouter.getRouteName() == "details"){
-      Meteor.call("updateOpp", FlowRouter.getParam("_id"), opp);
+      Meteor.call("updateOpp", FlowRouter.getParam("_id"), opp, function(error, id){
+        checkValid(id)
+      });
     }
 }
 });
+
+function checkValid(id){
+  if(id == null){
+    console.log("Error in creation");
+  }else{
+    FlowRouter.go("/");
+  //Form when we have temp/route for details page
+  //  FlowRouter.go("/opportunity/" + id)
+  }
+}

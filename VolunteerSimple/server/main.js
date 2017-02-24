@@ -23,6 +23,8 @@ Meteor.publish("Opportunity", function(){
   return Opportunity.find();
 });
 
+
+
 Accounts.onCreateUser(function (options, user) {
   //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
   console.log(user._id);
@@ -34,7 +36,7 @@ Accounts.onCreateUser(function (options, user) {
 Meteor.methods({
   'modSignUp' : function(oId, uId, mode){
     //Add Validation to prevent duplicate entries
-    if(Meteor.user._id == uId){
+    if(Meteor.user()._id == uId){
       if(mode == "add"){
         Opportunity.update({_id: oId}, {$push: {accepts: uId}});
     }else if(mode == "remove"){
@@ -43,21 +45,29 @@ Meteor.methods({
     }
   },
   'createOpp' : function(oppo){
-    //Add security for if in role
-    Opportunity.insert(oppo);
+    if(Roles.userIsInRole(Meteor.user()._id, ["poster"]) && oppo.owner == Meteor.user()._id){
+      return Opportunity.insert(oppo);
+    }else{
+      return null;
+    }
   },
   'updateOpp': function(oId, data){
-    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
-      Opportunity.update({_id: oId}, {$set: data});
+    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
+      return Opportunity.update({_id: oId}, {$set: data});
+    }else{
+      return null;
     }
   },
   'removeOpp': function(oId){
-    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
-      Opportunity.remove({_id: oId});
+    //Pending test and front end implementation
+    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
+      return Opportunity.remove({_id: oId});
+    }else{
+      return null;
     }
   },
   'updateClient' : function(aId, fName, lName){
-    if(Meteor.user._id == aId){
+    if(Meteor.user()._id == aId){
     Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
     }
   },
@@ -80,7 +90,7 @@ Meteor.methods({
     }
   },
   'modSave': function(aId, oId, mode){
-    if(Meteor.user._id == aId){
+    if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
     }else if(mode == "remove"){
