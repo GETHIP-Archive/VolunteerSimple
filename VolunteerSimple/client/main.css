@@ -111,7 +111,7 @@ h1 {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 100%;
+    width: 69%;
 }
 
 .active {
