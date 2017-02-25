@@ -9,10 +9,17 @@ FlowRouter.route('/', {
   }
 });
 
+FlowRouter.route('/login', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "login"});
+  }
+});
+
 FlowRouter.route('/schedule', {
   name: "saved",
   action: function() {
-    BlazeLayout.render("content", {content: "schedule"});
+    BlazeLayout.render("content", {content: "saved"});
   }
 });
 
@@ -31,7 +38,7 @@ FlowRouter.route('/profile', {
 });
 
 FlowRouter.route('/details/:_id', {
-  name: "sHome",
+  name: "details",
   action: function() {
     BlazeLayout.render("content", {content: "details"});
   }
@@ -44,14 +51,14 @@ FlowRouter.route('/details', {
 });
 
 FlowRouter.route('/completed', {
-  name: "sHome",
+  name: "completed",
   action: function() {
     BlazeLayout.render("content", {content: "completed"});
   }
 });
 
 FlowRouter.route('/signup', {
-  name: "sHome",
+  name: "signup",
   action: function() {
     BlazeLayout.render("content", {content: "signup"});
   }
@@ -61,5 +68,7 @@ FlowRouter.route('/create', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "create"});
+
+
   }
 });

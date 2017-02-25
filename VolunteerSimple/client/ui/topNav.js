@@ -13,5 +13,18 @@ Template.topNav.events ({
   },
   'click .messages': function(){
     FlowRouter.go('/messages');
+  },
+  'click .logout': function(){
+    Meteor.logout();
+    FlowRouter.go("/login");
+  },
+  'click .signup': function(){
+    FlowRouter.go("/signup");
+  },
+  'click .login': function(){
+    FlowRouter.go("/login");
+  },
+  'click .profile': function(){
+    FlowRouter.go("/profile");
   }
 })
