@@ -7,8 +7,8 @@
     <div class="row">
 
 
-    {{#if isInRole 'client'}}
-    <div class="well">
+      {{#if isInRole 'client'}}
+      <div class="well">
         <ol>
           <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
           <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
@@ -16,20 +16,20 @@
           <li><span style="orgListHighLight">Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
           <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></span></li>
         </ol>
+      </div>
+
+      <div class="row">
+
+        {{#each post}}
+        {{> opportunity}}
+        {{/each}}
+      </div>
+      {{/if}}
+
+
     </div>
 
-    <div class="row">
-      
-    {{#each post}}
-      {{> opportunity}}
-      {{/each}}
-    </div>
-    {{/if}}
-
-
-    </div>
-
-<!-- VOLUNTEER DASHBOARD ABOVE; ORGANAZATION DASHBOARD BELOW -->
+    <!-- VOLUNTEER DASHBOARD ABOVE; ORGANAZATION DASHBOARD BELOW -->
 
 
     {{#if isInRole 'poster'}}
@@ -76,7 +76,7 @@
       </div>
       <!--Notifications-->
       <div class="row">
-        <div class="col-md-6">
+        <!--<div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Notifications</h3>
@@ -85,19 +85,19 @@
               <p>...</p>
             </div>
           </div>
-        </div>
+        </div>-->
         <!--Pinned-->
-        <div class="col-md-3">
-          <div class="panel panel-default">
+        <!--<div class="col-md-3">-->
+          <!--<div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Pinned</h3>
             </div>
             <div class="panel-body">
               <p>...</p>
             </div>
-          </div>
-          <!--Send Notification
-          <div class="panel panel-default">
+          </div>-->
+          <!--Send Notification-->
+          <!--<div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Send Notification</h3>
             </div>
@@ -105,22 +105,23 @@
               <p>...</p>
             </div>
           </div>-->
-        </div>
-        <!--Upcoming-->
-        <div class="col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Upcoming</h3>
-            </div>
-            <div class="panel-body">
-              <p>...</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
+          <!--Upcoming
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Upcoming</h3>
+              </div>
+              <div class="panel-body">
+                <p>...</p>
+              </div>
+            </div>
+          </div>-->
+        <!--</div>-->
+      </div>
     </div>
-          {{/if}}
-  </div>
+  {{/if}}
+
+</div>
 
 </template>

@@ -123,7 +123,6 @@ input[type=text]:focus {
 
 .deleteBtn {
 	height: 20px;
-  width: 10px;
   border-radius: 50%;
 	position: relative;
 	bottom: -1px;
@@ -179,7 +178,7 @@ span:hover::before{
 }
 span:hover{
 	position: relative;
-    background:lightgrey;
+    background:#7fd1ca;
 	right: -60;
 }
 
