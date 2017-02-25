@@ -1,3 +1,15 @@
+.box {
+  background-color: #d0edea;
+  padding: 20px;
+  border-radius: 15px;
+  width: 75%;
+  margin: auto;
+}
+
+.form-control {
+    width: 69%;
+  }
+
 .navbar-inverse {
     background-color: #155b55;
     border-color: #155b55;
@@ -99,7 +111,7 @@ h1 {
 
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 100%;
+    width: 69%;
 }
 
 .active {
