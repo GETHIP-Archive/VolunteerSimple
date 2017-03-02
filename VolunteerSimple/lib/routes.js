@@ -64,11 +64,16 @@ FlowRouter.route('/signup', {
   }
 });
 
+FlowRouter.route('/information', {
+  name: "signup",
+  action: function() {
+    BlazeLayout.render("content", {content: "information"});
+  }
+});
+
 FlowRouter.route('/create', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "create"});
-
-
   }
-});
+}):
