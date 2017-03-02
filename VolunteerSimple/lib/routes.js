@@ -76,4 +76,4 @@ FlowRouter.route('/create', {
   action: function() {
     BlazeLayout.render("content", {content: "create"});
   }
-}):
+});
