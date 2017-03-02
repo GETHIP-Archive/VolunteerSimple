@@ -12,11 +12,11 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("Posters", function(){
-  return Posters.find({account: Meteor.user()._id});
+  return Posters.find({account: this.userId});
 });
 
 Meteor.publish("Clients", function(){
-  return Clients.find({account: Meteor.user()._id});
+  return Clients.find({account: this.userId});
 });
 
 Meteor.publish("Opportunity", function(){

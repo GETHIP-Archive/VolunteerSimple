@@ -10,7 +10,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/login', {
-  name: "sHome",
+  name: "login",
   action: function() {
     BlazeLayout.render("content", {content: "login"});
   }
@@ -75,7 +75,5 @@ FlowRouter.route('/create', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "create"});
-
-
   }
-});
+}):
