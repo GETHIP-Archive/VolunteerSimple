@@ -12,6 +12,10 @@ var empty = {
   hours: "",
   location: "",
   address: "",
+  deadline: "",
+  description: "",
+  slots: "",
+  time: "",
 }
 
 
@@ -47,7 +51,11 @@ Template.details.events({
       hours: event.target.hours.value,
       location: event.target.location.value,
       address: event.target.address.value,
-      owner: Meteor.userId()
+      owner: Meteor.userId(),
+      shortDes: event.target.description.value,
+      slots: event.target.slots.value,
+      deadline: event.target.deadline.value,
+      time: event.target.time.value
     }
 
     if(FlowRouter.getRouteName() == "new"){

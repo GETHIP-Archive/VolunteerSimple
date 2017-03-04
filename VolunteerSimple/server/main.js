@@ -101,15 +101,23 @@ Meteor.methods({
     }
 },
 'addData': function(){
-  // for(var i = 0; i < 10; i++){
-  //   Opportunity.insert({
-  //     title: "GET HIP" + i,
-  //     description: "SAMPLE OPP." + i,
-  //     createdAt: new Date(),
-  //     accepts: ["123"],
-  //     eventDate: new Date(),
-  //     owner: "Ahh77887"
-  //   });
-  // }
+  for(var i = 0; i < 5; i++){
+  var opp = {
+    title: Math.random(),
+    description: Math.random(),
+    createdAt: new Date(),
+    accepts: ["sdf"],
+    eventDate: Math.random(),
+    hours: Math.random(),
+    location: Math.random(),
+    address: Math.random(),
+    owner: "Meteor.user()._id",
+    shortDes: Math.random(),
+    slots: Math.random(),
+    deadline: Math.random(),
+    time: Math.random()
+  }
+  Opportunity.insert(opp);
+}
 }
 });

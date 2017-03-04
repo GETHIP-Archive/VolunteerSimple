@@ -23,6 +23,6 @@ Template.opportunity.events({
     }
   },
   'click .details': function(event){
-    FlowRouter.go('/details/' + event.target.id);
+    FlowRouter.go('/information/' + event.target.id);
   }
 });

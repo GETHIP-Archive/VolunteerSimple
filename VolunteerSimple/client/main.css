@@ -22,6 +22,10 @@
     width: 69%;
   }
 
+.form-controlB {
+    width: 100%;
+}
+
 .navbar-inverse {
     background-color: #155b55;
     border-color: #155b55;
@@ -283,7 +287,7 @@ span:hover{
 }
 
 .orgEditBioBox {
-	Height: 300px;
+	Height: 575px;
 }
 
 .orgEditButtons {
