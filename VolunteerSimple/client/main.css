@@ -147,6 +147,12 @@ input[type=text]:focus {
 	float: right;
 }
 
+.infoValidate {
+	height: 22px;
+	position: relative;
+	float: right;
+}
+
 .deleteBtn {
 	height: 20px;
   border-radius: 50%;
