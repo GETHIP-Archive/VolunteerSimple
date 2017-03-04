@@ -1,16 +1,60 @@
 <template name="Row">
-  <div class='container'>
       <tr>
         <td>ME</td>
-        <td>example@lol.org</td>
-        <td>123-123-1234</td>
+        <td><center>example@lol.org</center></td>
+        <td><center>123-123-1234</center></td>
+		<td>
+			<button type="button" class="btn  infoValidate">
+				<h6 class="orgEditTwo">Validate</h6>
+			</button>
+		</td>
       </tr>
-  </div>
 </template>
 <template name="information">
   {{#with data}}
   <div class='container'>
 	<div class="row">
+		<!--Left Info Box-->
+		<div class="col-md-3">
+<!--Put if here-->
+			<div class="well ">
+				<center>
+					<h3>Volunteers</h3>
+					<h4>#/123</h4>
+					</center>
+			</div>
+<!--End if here-->
+<!--Put if here-->
+			<button type="button" class="btn infoButtonTwo"><strong>Sign Up</strong></button>
+			<div class="well">
+				<h4><strong>Organization:</strong></h4>
+				<p>{{owner}}</p>
+				<hr class="infoLineGap">
+				<h4><strong>Date:</strong></h4>
+				<p>{{date}}</p>
+				<h4><strong>Time:</strong></h4>
+				<p>4:00PM</p>
+				<hr class="infoLineGap">
+				<h4><strong>Phone Number:</strong></h4>
+				<p>123-123-1234</p>
+				<h4><strong>Email:</strong></h4>
+				<p>Example@gmail.com</p>
+				<hr class="infoLineGap">
+				<h4><strong>Location:</strong></h4>
+				<p>{{location}}</p>
+				<h4><strong>Adress:</strong></h4>
+				<p>{{address}}</p>
+			</div>
+<!--Put if here-->
+			<center>
+				<div class="btn-group">
+					<button type="button" class="btn infoButton"><strong>Edit</strong></button>
+					<button type="button" class="btn infoButton"><strong>Delete</strong></button>
+				</div>
+			</center>
+			<br>
+<!--End if here-->
+		</div>
 		<div class="col-md-9">
 		<!--Top Info Box-->
 			<div class="panel panel-default">
@@ -27,13 +71,13 @@
 				<div class="panel-heading">
 					<h2>Volunteers</h2>
 				</div>
-				<div class="panel-body orgEditBioBox">
+				<div class="panel-body">
 				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>Name</th>
-							<th>Email</th>
-							<th>Phone#</th>
+							<th><center>Email</center></th>
+							<th><center>Phone#</center></th>
 						</tr>
 					</thead>
 						<tbody>
@@ -44,40 +88,6 @@
 					</table>
 				</div>
 			</div>
-		</div>
-		<!--Right Info Box-->
-		<div class="col-md-3">
-			<div class="well">
-				<center>
-					<h3>Volunteers</h3>
-					<h4>#/123</h4>
-					</center>
-			</div>
-
-
-			<div class="well">
-				<h4>Organization:</h4>
-				<p>Gallup</p>
-				<hr>
-				<h4>Date:</h4>
-				<p>July 4th</p>
-				<h4>Time:</h4>
-				<p>4:00PM</p>
-				<hr>
-				<h4>Phone Number:</h4>
-				<p>123-123-1234</p>
-				<h4>Email:</h4>
-				<p>Example@gmail.com</p>
-				<hr>
-				<h4>Location:</h4>
-				<p>1234 St. Omaha Nebraska</p>
-				<h4>Adress:</h4>
-				<p>1234 St. Omaha Nebraska</p>
-			</div>
-			<center>
-				<button type="button" class="btn">Edit</button>
-			</center>
-			<br>
 		</div>
 	</div>
   </div>

@@ -1,3 +1,15 @@
+.btn.active.signup {
+  background-color: #155b55;
+  border-color: #155b55;
+}
+
+.signupBtn {
+  margin-bottom: 50px;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
 .box {
   background-color: #d0edea;
   padding: 20px;
@@ -108,10 +120,20 @@ h1 {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-
+.profile-input {
+  width:99%;
+}
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 69%;
+    width: 60%;
+}
+
+.profileinfo {
+  margin-left: 100px;
+}
+
+.box > .profileinfo {
+  width: 50%;
 }
 
 .active {
@@ -134,6 +156,20 @@ input[type=text]:focus {
 	float: right;
 }
 
+.orgEditButtonTwo {
+	height: 22px;
+	position: relative;
+	bottom: 2px;
+	right: -45px;
+	float: right;
+}
+
+.infoValidate {
+	height: 22px;
+	position: relative;
+	float: right;
+}
+
 .deleteBtn {
 	height: 20px;
   border-radius: 50%;
@@ -142,6 +178,13 @@ input[type=text]:focus {
 	float: right;
   padding: 6px 6px 2px 6px;
   margin-left: 7px;
+  background-color: red;
+  border-color: #8b0000;
+}
+
+.deleteBtn:hover {
+  background-color: #8b0000;
+  border-color: #8b0000;
 }
 
 .orgEditButton:focus {
@@ -150,7 +193,7 @@ input[type=text]:focus {
 }
 
 .deleteBtn:focus {
-	background-color: #155b55;
+	background-color: red;
   color: #fff;
 }
 
@@ -159,12 +202,17 @@ input[type=text]:focus {
 }
 
 .table-striped {
-	
+
 }
 
 .orgEdit {
 	position: relative;
 	bottom: 14px;
+}
+
+.orgEditTwo {
+	position: relative;
+	bottom: 12px;
 }
 
 .delete {
@@ -208,6 +256,26 @@ span:hover{
 	float: left;
 }
 
+.infoLineGap {
+	margin-top:0px;
+	margin-bottom:9px;
+	width: 92%;
+	float: left;
+}
+
+.infoButton {
+	width: 131px;
+	height: 35px;
+	bottom: 10px;
+	text-align: center;
+}
+
+.infoButtonTwo {
+	width: 262px;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
 .orgEditBio {
     resize: none;
 	position: relative;
@@ -215,11 +283,11 @@ span:hover{
 }
 
 .orgEditBioBox {
-	Height: 170px;
+	Height: 300px;
 }
 
 .orgEditButtons {
-	float: right;
+	float: left;
 }
 
 .orgEditInfo {
@@ -254,6 +322,7 @@ span:hover{
 	right: 40%;
 	float: right;
 }
+
 th, td {
     border-bottom: 1px solid #ddd;
 }

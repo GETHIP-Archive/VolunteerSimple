@@ -15,7 +15,7 @@ Template.topNav.events ({
     FlowRouter.go('/');
   },
   'click .clipboard': function(){
-    FlowRouter.go('/clipboard');
+    FlowRouter.go('/schedule');
   },
   'click .manage': function(){
     FlowRouter.go('/manage');

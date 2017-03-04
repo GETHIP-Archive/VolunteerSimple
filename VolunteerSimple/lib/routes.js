@@ -17,7 +17,7 @@ FlowRouter.route('/login', {
 });
 
 FlowRouter.route('/schedule', {
-  name: "saved",
+  name: "clipboard",
   action: function() {
     BlazeLayout.render("content", {content: "saved"});
   }
@@ -61,6 +61,14 @@ FlowRouter.route('/signup', {
   name: "signup",
   action: function() {
     BlazeLayout.render("content", {content: "signup"});
+  }
+});
+
+
+FlowRouter.route('/new', {
+  name: "new",
+  action: function() {
+    BlazeLayout.render("content", {content: "details"});
   }
 });
 
