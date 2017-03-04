@@ -1,0 +1,37 @@
+<template name="manageLine">
+	<div class='container'>
+		<li>
+			Opportunity
+			<div class="btn-group orgEditButton">
+				<button type="button" class="btn  orgEditButton">
+					<h6 class="orgEdit">EDIT</h6>
+				</button>
+				<button type="button" class="btn  orgEditButton">
+					<h6 class="orgEdit">VIEW</h6>
+				</button>
+				<button type="button" class="btn  orgEditButton">
+					<h6 class="orgEdit">REMOVE</h6>
+				</button>
+			</div>
+		</li>
+		<hr class="lineGap">
+	</div>
+</template>
+<template name="manage">
+	<div class='container'>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">My Opportunities</h3>
+			</div>
+			<div class="panel-body">
+				<ol>
+					{{> manageLine}}
+					{{> manageLine}}
+					{{> manageLine}}
+					{{> manageLine}}
+					{{> manageLine}}
+				</ol>
+			</div>
+		</div>
+	</div>
+</template>
