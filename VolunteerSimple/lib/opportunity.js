@@ -36,6 +36,14 @@ opportunity = new SimpleSchema({
     address: {
       type: String,
       label: "address"
+    },
+    deadline: {
+      type: String,
+      label: "deadline"
+    },
+    slots: {
+      type: String,
+      label: "slots"
     }
 });
 
