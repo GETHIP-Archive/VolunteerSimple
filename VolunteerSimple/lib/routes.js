@@ -71,6 +71,13 @@ FlowRouter.route('/information', {
   }
 });
 
+FlowRouter.route('/manage', {
+  name: "signup",
+  action: function() {
+    BlazeLayout.render("content", {content: "manage"});
+  }
+});
+
 FlowRouter.route('/create', {
   name: "sHome",
   action: function() {

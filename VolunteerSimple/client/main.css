@@ -118,6 +118,7 @@ input[type=text]:focus {
 	height: 18px;
 	position: relative;
 	bottom: -1px;
+	right: 45px;
 	float: right;
 }
 
@@ -166,6 +167,13 @@ span:hover{
 	position: relative;
     background:lightgrey;
 	right: -60;
+}
+
+.lineGap {
+	margin-top:2px;
+	margin-bottom:1px;
+	width: 92%;
+	float: left;
 }
 
 .orgEditBio {
