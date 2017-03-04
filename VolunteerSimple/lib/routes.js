@@ -64,6 +64,14 @@ FlowRouter.route('/signup', {
   }
 });
 
+
+FlowRouter.route('/new', {
+  name: "new",
+  action: function() {
+    BlazeLayout.render("content", {content: "details"});
+  }
+});
+
 FlowRouter.route('/information/:_id', {
   name: "information",
   action: function() {

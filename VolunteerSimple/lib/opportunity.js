@@ -18,12 +18,24 @@ opportunity = new SimpleSchema({
       label: "accepts"
     },
     eventDate:{
-      type: Date(),
+      type: String,
       label: "eventDate"
     },
     owner: {
       type: String,
       label: "owner"
+    },
+    hours: {
+      type: String,
+      label: "hours"
+    },
+    location: {
+      type: String,
+      label: "location"
+    },
+    address: {
+      type: String,
+      label: "address"
     }
 });
 
