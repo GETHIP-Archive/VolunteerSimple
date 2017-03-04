@@ -12,11 +12,11 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("Posters", function(){
-  return Posters.find({account: Meteor.user()._id});
+  return Posters.find({account: this.userId});
 });
 
 Meteor.publish("Clients", function(){
-  return Clients.find({account: Meteor.user()._id});
+  return Clients.find({account: this.userId});
 });
 
 Meteor.publish("Opportunity", function(){
@@ -93,6 +93,8 @@ Meteor.methods({
     if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
+        console.log("its yes");
+        console.log(Clients.findOne({account: Meteor.user()._id}));
     }else if(mode == "remove"){
         Clients.update({account: aId}, {$pull: {saved: oId}});
       }
