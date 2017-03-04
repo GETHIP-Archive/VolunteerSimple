@@ -213,6 +213,26 @@ span:hover{
 	float: left;
 }
 
+.infoLineGap {
+	margin-top:0px;
+	margin-bottom:9px;
+	width: 92%;
+	float: left;
+}
+
+.infoButton {
+	width: 131px;
+	height: 35px;
+	bottom: 10px;
+	text-align: center;
+}
+
+.infoButtonTwo {
+	width: 262px;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
 .orgEditBio {
     resize: none;
 	position: relative;
@@ -259,6 +279,7 @@ span:hover{
 	right: 40%;
 	float: right;
 }
+
 th, td {
     border-bottom: 1px solid #ddd;
 }
