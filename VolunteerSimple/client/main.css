@@ -157,6 +157,10 @@ input[type=text]:focus {
   color: #fff;
 }
 
+.table-striped {
+	
+}
+
 .orgEdit {
 	position: relative;
 	bottom: 14px;
@@ -231,6 +235,19 @@ span:hover{
 	right: 15px;
 	bottom: 59px;
 	float: right;
+}
+
+.informationVolunteerPhone {
+	float: right;
+}
+
+.informationVolunteerEmail {
+	position: relative;
+	right: 40%;
+	float: right;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
 }
 
 footer {
