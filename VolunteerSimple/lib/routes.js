@@ -10,7 +10,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/login', {
-  name: "sHome",
+  name: "login",
   action: function() {
     BlazeLayout.render("content", {content: "login"});
   }
@@ -43,6 +43,12 @@ FlowRouter.route('/details/:_id', {
     BlazeLayout.render("content", {content: "details"});
   }
 });
+FlowRouter.route('/details', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "details"});
+  }
+});
 
 FlowRouter.route('/completed', {
   name: "completed",
@@ -58,16 +64,31 @@ FlowRouter.route('/signup', {
   }
 });
 
-FlowRouter.route('/opportunity-create', {
-  name: "opportunity-create",
+
+FlowRouter.route('/new', {
+  name: "new",
   action: function() {
-    BlazeLayout.render("content", {content: "opportunity-create"});
+    BlazeLayout.render("content", {content: "details"});
   }
 });
 
-FlowRouter.route('/login', {
-  name: "login",
+FlowRouter.route('/information/:_id', {
+  name: "information",
   action: function() {
-    BlazeLayout.render("content", {content: "login"});
+    BlazeLayout.render("content", {content: "information"});
+  }
+});
+
+FlowRouter.route('/manage', {
+  name: "signup",
+  action: function() {
+    BlazeLayout.render("content", {content: "manage"});
+  }
+});
+
+FlowRouter.route('/create', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "create"});
   }
 });
