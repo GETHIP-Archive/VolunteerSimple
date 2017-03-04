@@ -112,11 +112,19 @@ h1 {
     transition: width 0.4s ease-in-out;
 }
 .profile-input {
-  width:60%;
+  width:99%;
 }
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 69%;
+    width: 60%;
+}
+
+.profileinfo {
+  margin-left: 100px;
+}
+
+.box > .profileinfo {
+  width: 50%;
 }
 
 .active {
