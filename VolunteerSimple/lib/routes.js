@@ -17,7 +17,7 @@ FlowRouter.route('/login', {
 });
 
 FlowRouter.route('/schedule', {
-  name: "saved",
+  name: "clipboard",
   action: function() {
     BlazeLayout.render("content", {content: "saved"});
   }
