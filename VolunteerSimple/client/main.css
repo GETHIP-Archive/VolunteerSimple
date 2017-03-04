@@ -1,3 +1,6 @@
+.profile-image {
+  border-radius: 50%;
+}
 .box {
   background-color: #d0edea;
   padding: 20px;
@@ -108,7 +111,9 @@ h1 {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-
+.profile-input {
+  width:60%;
+}
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
     width: 69%;
@@ -159,7 +164,7 @@ input[type=text]:focus {
 }
 
 .table-striped {
-	
+
 }
 
 .orgEdit {
