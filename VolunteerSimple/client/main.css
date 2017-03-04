@@ -139,6 +139,14 @@ input[type=text]:focus {
 	float: right;
 }
 
+.orgEditButtonTwo {
+	height: 22px;
+	position: relative;
+	bottom: 2px;
+	right: -45px;
+	float: right;
+}
+
 .deleteBtn {
 	height: 20px;
   border-radius: 50%;
@@ -170,6 +178,11 @@ input[type=text]:focus {
 .orgEdit {
 	position: relative;
 	bottom: 14px;
+}
+
+.orgEditTwo {
+	position: relative;
+	bottom: 12px;
 }
 
 .delete {

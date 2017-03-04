@@ -1,36 +1,76 @@
 <template name="manageLine">
-	<div class='container'>
-		<li>
-			Opportunity
+	<tr>
+        <td>Opportunity</td>
+		<!--Slots Filled-->
+		<td><center>321</center></td>
+		<!--Slots Open-->
+		<td><center>123</center></td>
+		<td>
 			<div class="btn-group orgEditButton">
-				<button type="button" class="btn  orgEditButton">
-					<h6 class="orgEdit">EDIT</h6>
+				<button type="button" class="btn  orgEditButtonTwo">
+					<h6 class="orgEditTwo">EDIT</h6>
 				</button>
-				<button type="button" class="btn  orgEditButton">
-					<h6 class="orgEdit">VIEW</h6>
+				<button type="button" class="btn  orgEditButtonTwo">
+					<h6 class="orgEditTwo">VIEW</h6>
 				</button>
-				<button type="button" class="btn  orgEditButton">
-					<h6 class="orgEdit">REMOVE</h6>
+				<button type="button" class="btn  orgEditButtonTwo">
+					<h6 class="orgEditTwo">REMOVE</h6>
 				</button>
 			</div>
-		</li>
-		<hr class="lineGap">
-	</div>
+		</td>
+	</tr>
+	<hr class="lineGap">
 </template>
 <template name="manage">
 	<div class='container'>
+		<div class="col-md-9">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h3 class="panel-title">My Opportunities</h3>
 			</div>
 			<div class="panel-body">
-				<ol>
-					{{> manageLine}}
-					{{> manageLine}}
-					{{> manageLine}}
-					{{> manageLine}}
-					{{> manageLine}}
-				</ol>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th><center>Slots Filled</center></th>
+							<th><center>Slots Open</center></th>
+						</tr>
+					</thead>
+					<tbody>
+						{{> manageLine}}
+						{{> manageLine}}
+						{{> manageLine}}
+						{{> manageLine}}
+						{{> manageLine}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		<div class="col-md-3">
+			<div class="well">
+				<center>
+					<h4>Add an Opportunity</h4>
+				<hr>
+					<button type="button" class="btn addOpportunities">
+						<h4>Add</h4>
+					</button>
+				</center>
+			</div>
+		<div class="well">
+			<center>
+				<h4><strong>Total Slots Open</strong></h4>
+				<hr class="infoLineGap">
+				<h4>321</h4>
+			</center>
+		</div>
+		<div class="well">
+			<center>
+				<h4><strong>Total Slots Filled</strong></h4>
+				<hr class="infoLineGap">
+				<h4>123</h4>
+				</center>
 			</div>
 		</div>
 	</div>
