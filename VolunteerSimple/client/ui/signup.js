@@ -9,7 +9,13 @@ Template.newS.events({
         var cpassword = event.target.cpassword.calue;
         var fName = event.target.fName.value;
         var lName = event.target.lName.value;
-        var role = event.target.bio.value;
+        var role = "";
+        for (var i in event.target.options) {
+          if (event.target.options[i].checked) {
+            role = event.target.options[i].id;
+          }
+        }
+        // var role = event.target.options.checked;
 
         if(true){
           console.log(role);
@@ -30,6 +36,7 @@ Template.newS.events({
       }
     }
 });
+
 
 // Template.newS.helpers({
 //   'eMessage': function(){

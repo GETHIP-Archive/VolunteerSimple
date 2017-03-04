@@ -1,3 +1,12 @@
+.btn.active.signup {
+  background-color: #155b55;
+  border-color: #155b55;
+}
+
+.signupBtn {
+  margin-bottom: 50px;
+}
+
 .profile-image {
   border-radius: 50%;
 }
