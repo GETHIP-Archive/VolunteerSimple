@@ -23,6 +23,8 @@ Meteor.publish("Opportunity", function(){
   return Opportunity.find();
 });
 
+
+
 Accounts.onCreateUser(function (options, user) {
   //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
   console.log(user._id);
@@ -43,17 +45,25 @@ Meteor.methods({
     }
   },
   'createOpp' : function(oppo){
-    //Add security for if in role
-    Opportunity.insert(oppo);
+    if(Roles.userIsInRole(Meteor.user()._id, ["poster"]) && oppo.owner == Meteor.user()._id){
+      return Opportunity.insert(oppo);
+    }else{
+      return null;
+    }
   },
-  'editOpp': function(oId, oTitle, oDesc, oDate){
+  'updateOpp': function(oId, data){
     if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
-      Opportunity.update({_id: oId}, {$set: {title: oTitle, description: oDesc, eventDate: oDate}});
+      return Opportunity.update({_id: oId}, {$set: data});
+    }else{
+      return null;
     }
   },
   'removeOpp': function(oId){
+    //Pending test and front end implementation
     if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
-      Opportunity.remove({_id: oId});
+      return Opportunity.remove({_id: oId});
+    }else{
+      return null;
     }
   },
   'updateClient' : function(aId, fName, lName){
@@ -80,9 +90,6 @@ Meteor.methods({
     }
   },
   'modSave': function(aId, oId, mode){
-    console.log("sdf");
-    console.log("Meteor: " + Meteor.user()._id);
-    console.log("Passing: " + aId);
     if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
@@ -94,15 +101,15 @@ Meteor.methods({
     }
 },
 'addData': function(){
-  for(var i = 0; i < 10; i++){
-    Opportunity.insert({
-      title: "GET HIP" + i,
-      description: "SAMPLE OPP." + i,
-      createdAt: new Date(),
-      accepts: ["123"],
-      eventDate: new Date(),
-      owner: "Ahh77887"
-    });
-  }
+  // for(var i = 0; i < 10; i++){
+  //   Opportunity.insert({
+  //     title: "GET HIP" + i,
+  //     description: "SAMPLE OPP." + i,
+  //     createdAt: new Date(),
+  //     accepts: ["123"],
+  //     eventDate: new Date(),
+  //     owner: "Ahh77887"
+  //   });
+  // }
 }
 });

@@ -215,11 +215,11 @@ span:hover{
 }
 
 .orgEditBioBox {
-	Height: 170px;
+	Height: 300px;
 }
 
 .orgEditButtons {
-	float: right;
+	float: left;
 }
 
 .orgEditInfo {
