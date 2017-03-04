@@ -64,8 +64,8 @@ FlowRouter.route('/signup', {
   }
 });
 
-FlowRouter.route('/information', {
-  name: "signup",
+FlowRouter.route('/information/:_id', {
+  name: "information",
   action: function() {
     BlazeLayout.render("content", {content: "information"});
   }
