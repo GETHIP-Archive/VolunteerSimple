@@ -10,7 +10,7 @@ FlowRouter.route('/', {
 });
 
 FlowRouter.route('/login', {
-  name: "sHome",
+  name: "login",
   action: function() {
     BlazeLayout.render("content", {content: "login"});
   }
@@ -64,8 +64,8 @@ FlowRouter.route('/signup', {
   }
 });
 
-FlowRouter.route('/information', {
-  name: "signup",
+FlowRouter.route('/information/:_id', {
+  name: "information",
   action: function() {
     BlazeLayout.render("content", {content: "information"});
   }
@@ -82,7 +82,5 @@ FlowRouter.route('/create', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "create"});
-
-
   }
 });

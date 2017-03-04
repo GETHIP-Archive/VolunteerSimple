@@ -12,11 +12,11 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("Posters", function(){
-  return Posters.find({account: Meteor.user()._id});
+  return Posters.find({account: this.userId});
 });
 
 Meteor.publish("Clients", function(){
-  return Clients.find({account: Meteor.user()._id});
+  return Clients.find({account: this.userId});
 });
 
 Meteor.publish("Opportunity", function(){
@@ -34,7 +34,7 @@ Accounts.onCreateUser(function (options, user) {
 Meteor.methods({
   'modSignUp' : function(oId, uId, mode){
     //Add Validation to prevent duplicate entries
-    if(Meteor.user._id == uId){
+    if(Meteor.user()._id == uId){
       if(mode == "add"){
         Opportunity.update({_id: oId}, {$push: {accepts: uId}});
     }else if(mode == "remove"){
@@ -47,17 +47,17 @@ Meteor.methods({
     Opportunity.insert(oppo);
   },
   'editOpp': function(oId, oTitle, oDesc, oDate){
-    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
+    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
       Opportunity.update({_id: oId}, {$set: {title: oTitle, description: oDesc, eventDate: oDate}});
     }
   },
   'removeOpp': function(oId){
-    if(Meteor.user._id == Opportunity.find({_id: oId}).owner){
+    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
       Opportunity.remove({_id: oId});
     }
   },
   'updateClient' : function(aId, fName, lName){
-    if(Meteor.user._id == aId){
+    if(Meteor.user()._id == aId){
     Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
     }
   },
@@ -80,9 +80,14 @@ Meteor.methods({
     }
   },
   'modSave': function(aId, oId, mode){
-    if(Meteor.user._id == aId){
+    console.log("sdf");
+    console.log("Meteor: " + Meteor.user()._id);
+    console.log("Passing: " + aId);
+    if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
+        console.log("its yes");
+        console.log(Clients.findOne({account: Meteor.user()._id}));
     }else if(mode == "remove"){
         Clients.update({account: aId}, {$pull: {saved: oId}});
       }
