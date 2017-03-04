@@ -44,6 +44,14 @@ opportunity = new SimpleSchema({
     slots: {
       type: String,
       label: "slots"
+    },
+    time: {
+      type: String,
+      label: "time"
+    },
+    shortDes: {
+      type: String,
+      label: "shortDes"
     }
 });
 
