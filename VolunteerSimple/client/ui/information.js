@@ -1,10 +1,41 @@
 import { Opportunity }  from '../../lib/opportunity.js'
+import { Clients }  from '../../lib/client.js'
 
 Meteor.subscribe("Opportunity");
+Meteor.subscribe("Clients");
 
 Template.information.helpers({
   data: function(){
-    console.log(Opportunity.findOne({_id: FlowRouter.getParam("_id")}));
-    return Opportunity.findOne({_id: FlowRouter.getParam("_id")});
+    var data = Opportunity.findOne({_id: FlowRouter.getParam("_id")});
+    var clients = Clients.find({account: {$in: data.accepts}}).fetch();
+    data.accepts = clients;
+    return data;
+  },
+  status: function(){
+    return stat();
   }
 });
+
+Template.information.events({
+  'click .sUp': function(){
+    if(stat()){
+      Meteor.call("modSignUp", Meteor.user()._id, FlowRouter.getParam("_id"), "remove");
+    }else{
+      Meteor.call("modSignUp", Meteor.user()._id, FlowRouter.getParam("_id"), "add");
+    }
+  }
+});
+
+
+function stat(){
+  var returns = Opportunity.findOne({_id: FlowRouter.getParam("_id")});
+  var acceptors = [];
+  for(var i = 0; i < returns.accepts.length; i++){
+    acceptors.push(returns.accepts[i]);
+  }
+  if(acceptors.includes(Meteor.user()._id)){
+    return true;
+  }else{
+    return false;
+  }
+}

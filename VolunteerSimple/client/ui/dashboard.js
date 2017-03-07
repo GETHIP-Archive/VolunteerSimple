@@ -18,5 +18,16 @@ Template.dashboard.helpers({
           }
         }
         return result;
+    },
+    list: function(){
+      return Opportunity.find({accepts: Meteor.user()._id});
+
     }
+});
+
+Template.dashboard.events({
+  'click .deta': function(event){
+      console.log("sdf");
+      FlowRouter.go("/information/" + event.target.id);
+  }
 });

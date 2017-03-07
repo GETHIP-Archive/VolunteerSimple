@@ -1,17 +1,17 @@
 <template name="manageLine">
 	<tr>
-        <td>Opportunity</td>
+        <td>{{title}}</td>
 		<!--Slots Filled-->
 		<td><center>321</center></td>
 		<!--Slots Open-->
 		<td><center>123</center></td>
 		<td>
 			<div class="btn-group orgEditButton">
-				<button type="button" class="btn  orgEditButtonTwo">
-					<h6 class="orgEditTwo">EDIT</h6>
+				<button type="button" class="btn edit orgEditButtonTwo" id="{{_id}}">
+					<h6 class="orgEditTwo" id="{{_id}}">EDIT</h6>
 				</button>
-				<button type="button" class="btn  orgEditButtonTwo">
-					<h6 class="orgEditTwo">VIEW</h6>
+				<button type="button" id="{{_id}}" class="btn orgEditButtonTwo details">
+					<h6 class="orgEditTwo" id="{{_id}}">VIEW</h6>
 				</button>
 				<button type="button" class="btn  orgEditButtonTwo">
 					<h6 class="orgEditTwo">REMOVE</h6>
@@ -21,6 +21,8 @@
 	</tr>
 	<hr class="lineGap">
 </template>
+
+
 <template name="manage">
 	<div class='container'>
 		<div class="col-md-9">
@@ -38,11 +40,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{> manageLine}}
-						{{> manageLine}}
-						{{> manageLine}}
-						{{> manageLine}}
-						{{> manageLine}}
+						{{#each data}}
+							{{> manageLine}}
+						{{/each}}
 					</tbody>
 				</table>
 			</div>

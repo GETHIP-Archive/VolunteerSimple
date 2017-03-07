@@ -10,11 +10,9 @@
       {{#if isInRole 'client'}}
       <div class="well">
         <ol>
-          <li>Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-          <li>Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-          <li>Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-          <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-          <li>Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
+          {{#each list}}
+          <li class="deta">{{title}}<button type="button" id="{{_id}}" class="btn deta orgEditButton"><h6 class="det orgEdit" id="{{_id}}">DETAILS</h6></button></li>
+          {{/each}}
         </ol>
       </div>
 

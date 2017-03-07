@@ -10,11 +10,9 @@
       <div class="savedProgress">
         <div class="well">
             <ol>
-              <li>Opportunity<button type="button" class="btn  deleteBtn"><h6 class="delete">&#10008;</h6></button><button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-              <li>Opportunity<button type="button" class="btn  deleteBtn"><h6 class="delete">&#10008;</h6></button><button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-              <li>Opportunity<button type="button" class="btn  deleteBtn"><h6 class="delete">&#10008;</h6></button><button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-              <li>Opportunity<button type="button" class="btn  deleteBtn"><h6 class="delete">&#10008;</h6></button><button type="button" class="btn orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
-              <li>Opportunity<button type="button" class="btn  deleteBtn"><h6 class="delete">&#10008;</h6></button><button type="button" class="btn  orgEditButton"><h6 class="orgEdit">DETAILS</h6></button></li>
+              {{#each list}}
+              <li>{{title}}<button id="{{_id}}" type="button" class="btn deleteBtn del"><h6 id="{{_id}}" class="delete del">&#10008;</h6></button><button type="button" id="{{_id}}" class="btn deta orgEditButton"><h6 id="{{_id}}" class="orgEdit deta">DETAILS</h6></button></li>
+              {{/each}}
             </ol>
         </div>
     </div>

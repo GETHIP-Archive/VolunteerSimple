@@ -1,6 +1,6 @@
 <template name="Row">
       <tr>
-        <td>ME</td>
+        <td>{{firstName}}  {{lastName}}</td>
         <td><center>example@lol.org</center></td>
         <td><center>123-123-1234</center></td>
 		<td>
@@ -25,7 +25,13 @@
 			</div>
 <!--End if here-->
 <!--Put if here-->
-			<button type="button" class="btn infoButtonTwo"><strong>Sign Up</strong></button>
+			<button type="button" id="{{_id}}" class="btn infoButtonTwo sUp"><strong>
+        {{#if status}}
+        Un-Signup
+        {{else}}
+        Sign Up
+        {{/if}}
+      </strong></button>
 			<div class="well">
 				<h4><strong>Organization:</strong></h4>
 				<p>{{owner}}</p>

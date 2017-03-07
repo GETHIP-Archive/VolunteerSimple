@@ -51,7 +51,7 @@ Template.details.events({
       hours: event.target.hours.value,
       location: event.target.location.value,
       address: event.target.address.value,
-      owner: Meteor.userId(),
+      owner: Meteor.user()._id,
       shortDes: event.target.description.value,
       slots: event.target.slots.value,
       deadline: event.target.deadline.value,

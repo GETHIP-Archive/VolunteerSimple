@@ -16,7 +16,7 @@ Meteor.publish("Posters", function(){
 });
 
 Meteor.publish("Clients", function(){
-  return Clients.find({account: this.userId});
+  return Clients.find();
 });
 
 Meteor.publish("Opportunity", function(){
@@ -34,10 +34,14 @@ Accounts.onCreateUser(function (options, user) {
 });
 
 Meteor.methods({
-  'modSignUp' : function(oId, uId, mode){
-    //Add Validation to prevent duplicate entries
+  'modSignUp' : function(uId, oId, mode){
+    var returns = Opportunity.findOne({_id: oId});
+    var acceptors = [];
+    for(var i = 0; i < returns.accepts.length; i++){
+      acceptors.push(returns.accepts[i]);
+    }
     if(Meteor.user()._id == uId){
-      if(mode == "add"){
+      if(mode == "add" && acceptors.includes(uId) == false){
         Opportunity.update({_id: oId}, {$push: {accepts: uId}});
     }else if(mode == "remove"){
         Opportunity.update({_id: oId}, {$pull: {accepts: uId}});
@@ -52,7 +56,7 @@ Meteor.methods({
     }
   },
   'updateOpp': function(oId, data){
-    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
+    if(Meteor.user()._id == Opportunity.findOne({_id: oId}).owner){
       return Opportunity.update({_id: oId}, {$set: data});
     }else{
       return null;
