@@ -21,7 +21,14 @@ clientSchema = new SimpleSchema({
       label: "saved",
       optional: true
     },
-
+    email: {
+      type: String,
+      label: "email"
+    },
+    phone: {
+      type: String,
+      label: "phone"
+    }
 });
 
 

@@ -40,7 +40,7 @@ Template.topNav.events ({
 
 Template.topNav.helpers({
   db: function(){
-    if(FlowRouter.getRouteName() == "sHome"){
+    if(FlowRouter.getRouteName() == "sHome" || FlowRouter.getRouteName() == "manage"){
       console.log("it go");
       return "active";
     }

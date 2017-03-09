@@ -12,7 +12,7 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("Posters", function(){
-  return Posters.find({account: this.userId});
+  return Posters.find();
 });
 
 Meteor.publish("Clients", function(){
@@ -70,26 +70,38 @@ Meteor.methods({
       return null;
     }
   },
-  'updateClient' : function(aId, fName, lName){
-    if(Meteor.user()._id == aId){
-    Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
+  'updateProfile' : function(uId, data, mode){
+    if(Meteor.user()._id == uId){
+      if(mode == "client"){
+      return Clients.update({account: uId}, {$set: data});
+    }else if(mode == "poster"){
+      return Posters.update({account: uId}, {$set: data});
+    }
+    }else{
+      return null;
     }
   },
-  'postSignup': function(uId, role, fName, lName ){
+  'postSignup': function(uId, role, fName, lName, emailV, phoneN){
     if(role == "client"){
       Roles.addUsersToRoles(uId, role);
       Clients.insert({
         firstName: fName,
         lastName: lName,
         account: uId,
-        saved: ["null"]
+        saved: ["null"],
+        email: emailV,
+        phone: phoneN
       });
     }else if(role == "poster"){
       Roles.addUsersToRoles(uId, role);
+      console.log("it going");
       Posters.insert({
         firstName: fName,
         lastName: lName,
         account: uId,
+        email: emailV,
+        phone: phoneN,
+        org: lName
       });
     }
   },
@@ -115,7 +127,7 @@ Meteor.methods({
     hours: Math.random(),
     location: Math.random(),
     address: Math.random(),
-    owner: "Meteor.user()._id",
+    owner: "WmmD2BXbFSnA55M2T",
     shortDes: Math.random(),
     slots: Math.random(),
     deadline: Math.random(),
