@@ -12,8 +12,6 @@ Template.profile.helpers({
     if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
     return Clients.findOne({account: Meteor.user()._id});
   }else if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
-    console.log("sdf")
-    console.log(Posters.find({account: Meteor.user()._id}).fetch());
     return Posters.findOne({account: Meteor.user()._id});
   }
   }
@@ -29,7 +27,6 @@ Template.profile.events({
       phone: event.target.phone.value,
       email: event.target.email.value
     }
-    console.log(update);
     Meteor.call("updateProfile", Meteor.user()._id, update, "client");
   FlowRouter.go("/");
 }else if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
@@ -40,7 +37,6 @@ Template.profile.events({
     email: event.target.email.value,
     org: event.target.org.value
   }
-    console.log(update);
     Meteor.call("updateProfile", Meteor.user()._id, update, "poster");
   FlowRouter.go("/");
 }

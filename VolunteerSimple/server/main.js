@@ -26,10 +26,6 @@ Meteor.publish("Opportunity", function(){
 
 
 Accounts.onCreateUser(function (options, user) {
-  //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
-  console.log(user._id);
-  //console.log(Session.get("roger"));
-
   return user;
 });
 
@@ -63,8 +59,7 @@ Meteor.methods({
     }
   },
   'removeOpp': function(oId){
-    //Pending test and front end implementation
-    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
+    if(Meteor.user()._id == Opportunity.findOne({_id: oId}).owner){
       return Opportunity.remove({_id: oId});
     }else{
       return null;
@@ -94,7 +89,6 @@ Meteor.methods({
       });
     }else if(role == "poster"){
       Roles.addUsersToRoles(uId, role);
-      console.log("it going");
       Posters.insert({
         firstName: fName,
         lastName: lName,
@@ -109,8 +103,6 @@ Meteor.methods({
     if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
-        console.log("its yes");
-        console.log(Clients.findOne({account: Meteor.user()._id}));
     }else if(mode == "remove"){
         Clients.update({account: aId}, {$pull: {saved: oId}});
       }
@@ -127,7 +119,7 @@ Meteor.methods({
     hours: Math.random(),
     location: Math.random(),
     address: Math.random(),
-    owner: "WmmD2BXbFSnA55M2T",
+    owner: "nNpHwHY2hMynPYPy2",
     shortDes: Math.random(),
     slots: Math.random(),
     deadline: Math.random(),

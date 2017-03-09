@@ -3,7 +3,6 @@ Template.newL.events({
         event.preventDefault();
         var emailVar = event.target.username.value;
         var passwordVar = event.target.password.value;
-        console.log("atklsd");
       Meteor.loginWithPassword(emailVar, passwordVar, function(error){
           if(error){
 

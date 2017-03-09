@@ -10,9 +10,7 @@ Template.information.helpers({
   data: function(){
     var data = Opportunity.findOne({_id: FlowRouter.getParam("_id")});
     var clients = Clients.find({account: {$in: data.accepts}}).fetch();
-    console.log(data.owner);
     var poster = Posters.findOne({account: data.owner});
-    console.log(poster);
     data.accepts = clients;
     data.org = poster.org;
     data.phone = poster.phone;
@@ -31,7 +29,14 @@ Template.information.events({
     }else{
       Meteor.call("modSignUp", Meteor.user()._id, FlowRouter.getParam("_id"), "add");
     }
-  }
+  },
+    'click .remove': function(event){
+      Meteor.call("removeOpp", event.target.id);
+      FlowRouter.go("/");
+    },
+    'click .edit': function(event){
+      FlowRouter.go("/details/" + event.target.id);
+    }
 });
 
 

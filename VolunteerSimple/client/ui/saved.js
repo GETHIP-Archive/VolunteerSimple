@@ -17,7 +17,6 @@ Template.saved.helpers({
 
 Template.saved.events({
   'click .deta': function(event){
-      console.log("sdf");
       FlowRouter.go("/information/" + event.target.id);
   },
   'click .del': function(event){

@@ -24,7 +24,6 @@ Template.details.helpers({
       if(FlowRouter.getRouteName() == "new"){
         return empty;
       }else if(FlowRouter.getRouteName() == "details"){
-        console.log(Opportunity.find({_id: FlowRouter.getParam("_id")}).fetch());
         return Opportunity.findOne({_id: FlowRouter.getParam("_id")});
 
     }
@@ -76,7 +75,5 @@ function checkValid(id){
     console.log("Error in creation");
   }else{
     FlowRouter.go("/");
-  //Form when we have temp/route for details page
-  //  FlowRouter.go("/opportunity/" + id)
   }
 }

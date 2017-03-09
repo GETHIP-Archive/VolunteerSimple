@@ -13,13 +13,11 @@ Template.newS.events({
         role = event.target.options[i].id;
       }
     }
-    console.log(role);
     Accounts.createUser({
       email: emailVar,
       password: passwordVar
     }, function(error) {
       if(error){
-        console.log(error.reason)
       }else{
         Meteor.call("postSignup", Meteor.user()._id, role, fName, lName, emailVar, phone);
         if(role == "client"){

@@ -41,41 +41,35 @@ Template.topNav.events ({
 Template.topNav.helpers({
   db: function(){
     if(FlowRouter.getRouteName() == "sHome" || FlowRouter.getRouteName() == "manage"){
-      console.log("it go");
       return "active";
     }
       return "";
   },
   cb: function(){
     if(FlowRouter.getRouteName() == "clipboard"){
-      console.log("it go");
       return "active";
     }
       return "";
     },
   pf: function(){
     if(FlowRouter.getRouteName() == "profile"){
-      console.log("it go");
       return "active";
     }
       return "";
     },
   mp: function(){
     if(FlowRouter.getRouteName() == "manage"){
-      console.log("it go");
       return "active";
     }
       return "";
   },
   np: function(){
     if(FlowRouter.getRouteName() == "new"){
-      console.log("it go");
       return "active";
     }
       return "";
   },
   name: function(){
-    console.log(Roles.userIsInRole(Meteor.user()._id, ["client"]));
     if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
     return Clients.findOne({"account": Meteor.user()._id}).firstName;
   }else if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){

@@ -27,7 +27,6 @@ Template.dashboard.helpers({
 
 Template.dashboard.events({
   'click .deta': function(event){
-      console.log("sdf");
       FlowRouter.go("/information/" + event.target.id);
   }
 });
