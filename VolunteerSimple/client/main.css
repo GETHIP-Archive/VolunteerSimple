@@ -38,6 +38,10 @@ span.wait {
     width: 100%;
 }
 
+input[type=text]:focus {
+    width: 100%;
+ }
+
 .navbar-inverse {
     background-color: #155b55;
     border-color: #155b55;
