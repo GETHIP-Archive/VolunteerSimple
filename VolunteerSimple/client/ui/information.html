@@ -1,8 +1,8 @@
 <template name="Row">
       <tr>
         <td>{{firstName}}  {{lastName}}</td>
-        <td><center>example@lol.org</center></td>
-        <td><center>123-123-1234</center></td>
+        <td><center>{{email}}</center></td>
+        <td><center>{{phone}}</center></td>
 		<td>
 			<button type="button" class="btn  infoValidate">
 				<h6 class="orgEditTwo">Validate</h6>
@@ -17,14 +17,18 @@
 		<!--Left Info Box-->
 		<div class="col-md-3">
 <!--Put if here-->
-			<div class="well ">
+{{#if isInRole 'poster'}}
+      <div class="well ">
 				<center>
 					<h3>Volunteers</h3>
 					<h4>#/123</h4>
 					</center>
 			</div>
+      {{/if}}
 <!--End if here-->
 <!--Put if here-->
+
+{{#if isInRole 'client'}}
 			<button type="button" id="{{_id}}" class="btn infoButtonTwo sUp"><strong>
         {{#if status}}
         Un-Signup
@@ -32,34 +36,38 @@
         Sign Up
         {{/if}}
       </strong></button>
+{{/if}}
+
 			<div class="well">
 				<h4><strong>Organization:</strong></h4>
-				<p>{{owner}}</p>
+				<p>{{org}}</p>
 				<hr class="infoLineGap">
 				<h4><strong>Date:</strong></h4>
-				<p>{{date}}</p>
+				<p>{{eventDate}}</p>
 				<h4><strong>Time:</strong></h4>
 				<p>{{time}}</p>
+        <h4><strong>Deadline:</strong></h4>
+				<p>{{deadline}}</p>
 				<hr class="infoLineGap">
 				<h4><strong>Phone Number:</strong></h4>
-				<p>123-123-1234</p>
+				<p>{{phone}}</p>
 				<h4><strong>Email:</strong></h4>
-				<p>Example@gmail.com</p>
+				<p>{{email}}</p>
 				<hr class="infoLineGap">
 				<h4><strong>Location:</strong></h4>
 				<p>{{location}}</p>
 				<h4><strong>Adress:</strong></h4>
 				<p>{{address}}</p>
 			</div>
-<!--Put if here-->
+      {{#if isInRole 'poster'}}
 			<center>
 				<div class="btn-group">
-					<button type="button" class="btn infoButton"><strong>Edit</strong></button>
-					<button type="button" class="btn infoButton"><strong>Delete</strong></button>
+					<button type="button" id={{_id}} class="btn edit infoButton"><strong>Edit</strong></button>
+					<button type="button" id={{_id}} class="btn remove infoButton"><strong>Delete</strong></button>
 				</div>
 			</center>
 			<br>
-<!--End if here-->
+      {{/if}}
 		</div>
 		<div class="col-md-9">
 		<!--Top Info Box-->
@@ -73,6 +81,7 @@
 			</div>
 
 		<!--Volunteers-->
+    {{#if isInRole 'poster'}}
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h2>Volunteers</h2>
@@ -94,6 +103,8 @@
 					</table>
 				</div>
 			</div>
+      {{/if}}
+
 		</div>
 	</div>
   </div>

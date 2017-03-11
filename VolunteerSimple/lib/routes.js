@@ -5,7 +5,11 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 FlowRouter.route('/', {
   name: "sHome",
   action: function() {
-    BlazeLayout.render("content", {content: "dashboard"});
+    var type = "dashboard";
+    if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+      type = "manage";
+    }
+    BlazeLayout.render("content", {content: type});
   }
 });
 
@@ -80,7 +84,7 @@ FlowRouter.route('/information/:_id', {
 });
 
 FlowRouter.route('/manage', {
-  name: "signup",
+  name: "manage",
   action: function() {
     BlazeLayout.render("content", {content: "manage"});
   }

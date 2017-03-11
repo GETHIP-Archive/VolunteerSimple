@@ -1,14 +1,20 @@
 import { Opportunity }  from '../../lib/opportunity.js'
 import { Clients }  from '../../lib/client.js'
+import { Posters }  from '../../lib/poster.js'
 
 Meteor.subscribe("Opportunity");
 Meteor.subscribe("Clients");
+Meteor.subscribe("Posters");
 
 Template.information.helpers({
   data: function(){
     var data = Opportunity.findOne({_id: FlowRouter.getParam("_id")});
     var clients = Clients.find({account: {$in: data.accepts}}).fetch();
+    var poster = Posters.findOne({account: data.owner});
     data.accepts = clients;
+    data.org = poster.org;
+    data.phone = poster.phone;
+    data.email = poster.email;
     return data;
   },
   status: function(){
@@ -23,7 +29,14 @@ Template.information.events({
     }else{
       Meteor.call("modSignUp", Meteor.user()._id, FlowRouter.getParam("_id"), "add");
     }
-  }
+  },
+    'click .remove': function(event){
+      Meteor.call("removeOpp", event.target.id);
+      FlowRouter.go("/");
+    },
+    'click .edit': function(event){
+      FlowRouter.go("/details/" + event.target.id);
+    }
 });
 
 

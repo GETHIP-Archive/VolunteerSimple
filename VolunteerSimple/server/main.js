@@ -12,7 +12,7 @@ Meteor.startup(() => {
 });
 
 Meteor.publish("Posters", function(){
-  return Posters.find({account: this.userId});
+  return Posters.find();
 });
 
 Meteor.publish("Clients", function(){
@@ -26,10 +26,6 @@ Meteor.publish("Opportunity", function(){
 
 
 Accounts.onCreateUser(function (options, user) {
-  //Roles.addUsersToRoles(user._id, ['asdfsdf'], 'default-group');
-  console.log(user._id);
-  //console.log(Session.get("roger"));
-
   return user;
 });
 
@@ -63,26 +59,33 @@ Meteor.methods({
     }
   },
   'removeOpp': function(oId){
-    //Pending test and front end implementation
-    if(Meteor.user()._id == Opportunity.find({_id: oId}).owner){
+    if(Meteor.user()._id == Opportunity.findOne({_id: oId}).owner){
       return Opportunity.remove({_id: oId});
     }else{
       return null;
     }
   },
-  'updateClient' : function(aId, fName, lName){
-    if(Meteor.user()._id == aId){
-    Clients.update({account: aId}, {$set: {firstName: fName, lastName: lName}});
+  'updateProfile' : function(uId, data, mode){
+    if(Meteor.user()._id == uId){
+      if(mode == "client"){
+      return Clients.update({account: uId}, {$set: data});
+    }else if(mode == "poster"){
+      return Posters.update({account: uId}, {$set: data});
+    }
+    }else{
+      return null;
     }
   },
-  'postSignup': function(uId, role, fName, lName ){
+  'postSignup': function(uId, role, fName, lName, emailV, phoneN){
     if(role == "client"){
       Roles.addUsersToRoles(uId, role);
       Clients.insert({
         firstName: fName,
         lastName: lName,
         account: uId,
-        saved: ["null"]
+        saved: ["null"],
+        email: emailV,
+        phone: phoneN
       });
     }else if(role == "poster"){
       Roles.addUsersToRoles(uId, role);
@@ -90,6 +93,9 @@ Meteor.methods({
         firstName: fName,
         lastName: lName,
         account: uId,
+        email: emailV,
+        phone: phoneN,
+        org: lName
       });
     }
   },
@@ -97,8 +103,6 @@ Meteor.methods({
     if(Meteor.user()._id == aId){
       if(mode == "add"){
         Clients.update({account: aId}, {$push: {saved: oId}});
-        console.log("its yes");
-        console.log(Clients.findOne({account: Meteor.user()._id}));
     }else if(mode == "remove"){
         Clients.update({account: aId}, {$pull: {saved: oId}});
       }
@@ -115,7 +119,7 @@ Meteor.methods({
     hours: Math.random(),
     location: Math.random(),
     address: Math.random(),
-    owner: "Meteor.user()._id",
+    owner: "nNpHwHY2hMynPYPy2",
     shortDes: Math.random(),
     slots: Math.random(),
     deadline: Math.random(),
