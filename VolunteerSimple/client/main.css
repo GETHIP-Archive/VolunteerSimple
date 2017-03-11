@@ -43,10 +43,6 @@ span.wait {
     width: 100%;
 }
 
-input[type=text]:focus {
-    width: 100%;
- }
-
 .navbar-inverse {
     background-color: #155b55;
     border-color: #155b55;
@@ -147,10 +143,6 @@ h1 {
 }
 .profile-input {
   width:99%;
-}
-/* When the input field gets focus, change its width to 100% */
-input[type=text]:focus {
-    width: 60%;
 }
 
 .profileinfo {
