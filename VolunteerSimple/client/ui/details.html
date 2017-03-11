@@ -43,12 +43,14 @@
 
         <div class="btn-group orgEditButtons">
           {{#if mode}}
-          <button type="submit" class="btn btn-success">Post</button>
-          <button class="btn cancel btn-warning">Cancel</button>
+
+          <button type="submit" class="btn">Post</button>
+          <button class="btn">Cancel</button>
           {{else}}
-          <button type="submit" class="btn btn-success">Update</button>
-          <button class="btn cancel btn-warning">Cancel</button>
-          <button id={{_id}} class="btn remove btn-danger">Remove</button>
+          <button type="submit" class="btn">Update</button>
+          <button class="btn">Cancel</button>
+          <button class="btn">Remove</button>
+
           {{/if}}
 
     		</div>

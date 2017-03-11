@@ -1,3 +1,19 @@
+hr {
+  border-top: 1px solid #155b55;
+}
+
+span.crosshair {
+    cursor: crosshair;
+}
+
+span.help {
+    cursor: help;
+}
+
+span.wait {
+    cursor: wait;
+}
+
 .btn.active.signup {
   background-color: #155b55;
   border-color: #155b55;
@@ -10,6 +26,7 @@
 .profile-image {
   border-radius: 50%;
 }
+
 .box {
   background-color: #d0edea;
   padding: 20px;
@@ -25,6 +42,10 @@
 .form-controlB {
     width: 100%;
 }
+
+input[type=text]:focus {
+    width: 100%;
+ }
 
 .navbar-inverse {
     background-color: #155b55;
