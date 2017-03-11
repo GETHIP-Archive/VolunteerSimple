@@ -12,7 +12,7 @@ import '../../lib/routes.js'
 
 Template.topNav.events ({
   'click .dashboard': function() {
-    FlowRouter.go('/');
+    routeHome();
   },
   'click .clipboard': function(){
     FlowRouter.go('/schedule');
@@ -40,7 +40,7 @@ Template.topNav.events ({
 
 Template.topNav.helpers({
   db: function(){
-    if(FlowRouter.getRouteName() == "sHome" || FlowRouter.getRouteName() == "manage"){
+    if(FlowRouter.getRouteName() == "sHome" || FlowRouter.getRouteName() == "home"){
       return "active";
     }
       return "";
@@ -77,3 +77,11 @@ Template.topNav.helpers({
   }
   }
 });
+
+function routeHome(){
+  if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    FlowRouter.go("/home");
+  }else if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
+    FlowRouter.go("/");
+  }
+}

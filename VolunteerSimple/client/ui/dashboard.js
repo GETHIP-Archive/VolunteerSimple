@@ -1,9 +1,10 @@
 import { Opportunity }  from '../../lib/opportunity.js'
 import { Clients }  from '../../lib/client.js'
-
+import { Posters }  from '../../lib/poster.js'
 
 Meteor.subscribe("Opportunity");
 Meteor.subscribe("Clients");
+Meteor.subscribe("Posters");
 
 
 Template.dashboard.helpers({
@@ -16,6 +17,9 @@ Template.dashboard.helpers({
         }else{
           result[i].stat = true;
           }
+            var poster = Posters.findOne({account: result[i].owner});
+            result[i].org = poster.org;
+
         }
         return result;
     },

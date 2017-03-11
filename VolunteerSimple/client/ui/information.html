@@ -21,7 +21,7 @@
       <div class="well ">
 				<center>
 					<h3>Volunteers</h3>
-					<h4>#/123</h4>
+					<h4>{{sUps}}/{{slots}}</h4>
 					</center>
 			</div>
       {{/if}}
@@ -62,8 +62,8 @@
       {{#if isInRole 'poster'}}
 			<center>
 				<div class="btn-group">
-					<button type="button" id={{_id}} class="btn edit infoButton"><strong>Edit</strong></button>
-					<button type="button" id={{_id}} class="btn remove infoButton"><strong>Delete</strong></button>
+					<button type="button" id={{_id}} class="btn edit infoButton"><strong id="{{_id}}">Edit</strong></button>
+					<button type="button" id={{_id}} class="btn remove infoButton"><strong id="{{_id}}">Delete</strong></button>
 				</div>
 			</center>
 			<br>
