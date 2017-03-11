@@ -1,3 +1,31 @@
+.btn.active.signup {
+  background-color: #155b55;
+  border-color: #155b55;
+}
+
+.signupBtn {
+  margin-bottom: 50px;
+}
+
+.profile-image {
+  border-radius: 50%;
+}
+.box {
+  background-color: #d0edea;
+  padding: 20px;
+  border-radius: 15px;
+  width: 75%;
+  margin: auto;
+}
+
+.form-control {
+    width: 69%;
+  }
+
+.form-controlB {
+    width: 100%;
+}
+
 .navbar-inverse {
     background-color: #155b55;
     border-color: #155b55;
@@ -96,10 +124,20 @@ h1 {
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
-
+.profile-input {
+  width:99%;
+}
 /* When the input field gets focus, change its width to 100% */
 input[type=text]:focus {
-    width: 100%;
+    width: 60%;
+}
+
+.profileinfo {
+  margin-left: 100px;
+}
+
+.box > .profileinfo {
+  width: 50%;
 }
 
 .active {
@@ -118,7 +156,39 @@ input[type=text]:focus {
 	height: 18px;
 	position: relative;
 	bottom: -1px;
+	right: 45px;
 	float: right;
+}
+
+.orgEditButtonTwo {
+	height: 22px;
+	position: relative;
+	bottom: 2px;
+	right: -45px;
+	float: right;
+}
+
+.infoValidate {
+	height: 22px;
+	position: relative;
+	float: right;
+}
+
+.deleteBtn {
+	height: 20px;
+  border-radius: 50%;
+	position: relative;
+	bottom: -1px;
+	float: right;
+  padding: 6px 6px 2px 6px;
+  margin-left: 7px;
+  background-color: red;
+  border-color: #8b0000;
+}
+
+.deleteBtn:hover {
+  background-color: #8b0000;
+  border-color: #8b0000;
 }
 
 .orgEditButton:focus {
@@ -126,11 +196,30 @@ input[type=text]:focus {
   color: #fff;
 }
 
+.deleteBtn:focus {
+	background-color: red;
+  color: #fff;
+}
+
 .btn:focus {
   color: #fff;
 }
 
+.table-striped {
+
+}
+
 .orgEdit {
+	position: relative;
+	bottom: 14px;
+}
+
+.orgEditTwo {
+	position: relative;
+	bottom: 12px;
+}
+
+.delete {
 	position: relative;
 	bottom: 14px;
 }
@@ -160,8 +249,35 @@ span:hover::before{
 }
 span:hover{
 	position: relative;
-    background:lightgrey;
+    background:#7fd1ca;
 	right: -60;
+}
+
+.lineGap {
+	margin-top:2px;
+	margin-bottom:1px;
+	width: 92%;
+	float: left;
+}
+
+.infoLineGap {
+	margin-top:0px;
+	margin-bottom:9px;
+	width: 92%;
+	float: left;
+}
+
+.infoButton {
+	width: 131px;
+	height: 35px;
+	bottom: 10px;
+	text-align: center;
+}
+
+.infoButtonTwo {
+	width: 262px;
+	height: 35px;
+	margin-bottom: 10px;
 }
 
 .orgEditBio {
@@ -171,11 +287,11 @@ span:hover{
 }
 
 .orgEditBioBox {
-	Height: 170px;
+	Height: 575px;
 }
 
 .orgEditButtons {
-	float: right;
+	float: left;
 }
 
 .orgEditInfo {
@@ -201,6 +317,20 @@ span:hover{
 	float: right;
 }
 
+.informationVolunteerPhone {
+	float: right;
+}
+
+.informationVolunteerEmail {
+	position: relative;
+	right: 40%;
+	float: right;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
 footer {
   background-image: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
   background-image:      -o-linear-gradient(top, #3c3c3c 0%, #222 100%);
@@ -210,4 +340,75 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   background-repeat: repeat-x;
   border-radius: 4px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+ position: relative;
+ display: inline-block;
+ width: 30px;
+ height: 17px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+.slider {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #26a69a;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+.slider:before {
+ position: absolute;
+ content: "";
+ height: 13px;
+ width: 13px;
+ left: 2px;
+ bottom: 2px;
+ background-color: white;
+ -webkit-transition: .4s;
+ transition: .4s;
+}
+
+input:checked + .slider {
+ background-color: #155b55;
+}
+
+input:focus + .slider {
+ box-shadow: 0 0 1px #155b55;
+}
+
+input:checked + .slider:before {
+ -webkit-transform: translateX(11px);
+ -ms-transform: translateX(11px);
+ transform: translateX(11px);
+}
+
+/* Rounded sliders */
+.slider.round {
+ border-radius: 17px;
+}
+
+.slider.round:before {
+ border-radius: 50%;
+}
+
+#VolunteerToggle {
+  display:inline-block;
+  margin:10px;
+}
+#Toggle {
+  display:inline-block;
+  margin:10px;
+}
+#OrganizationToggle {
+  display:inline-block;
 }

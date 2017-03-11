@@ -7,23 +7,30 @@
 
       <div>
         <ul class="nav navbar-nav">
-          <li class="active"><a class="dashboard">Home</a></li>
-<!--        </ul>
-        <ul>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Account<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><a href="#">Profile</a></li>
-              -->
-                <li><a class="saved active">Saved</a></li>
-                <li><a class="messages active">Messages <span class="badge">#</span></a></li><!--# of messages, add template/variable here?-->
-      <!--        </ul>
-      </li>-->
+          <li class="{{db}}"><a class="dashboard">Dashboard</a></li>
+
+  {{#if isInRole 'client'}}
+  <li class="{{cb}}"><a class="clipboard">Clipboard</a></li>
+  <li class="{{pf}}"><a class="profile">Profile</a></li>
+  {{/if}}
+
+  {{#if isInRole 'poster'}}
+  <li class="{{np}}"><a class="newP">New Post</a></li>
+  <li class="{{pf}}"><a class="profile">Profile</a></li>
+  {{/if}}
           </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li-->
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Log In</a></li>
+
+
+          {{#if currentUser }}
+            <li><a href="#" class="profile"><span class="glyphicon glyphicon-user"></span> Welcome {{name}}!</a></li>
+          <li><a href="#" class="logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+        {{else}}
+        <li><a href="#" class="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#" class="login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+          {{/if}}
+
         </ul>
       </div>
     </div>

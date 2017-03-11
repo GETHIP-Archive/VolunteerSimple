@@ -1,0 +1,79 @@
+<template name="manageLine">
+	<tr>
+        <td>{{title}}</td>
+		<!--Slots Filled-->
+		<td><center>{{filled}}</center></td>
+		<!--Slots Open-->
+		<td><center>{{slots}}</center></td>
+		<td>
+			<div class="btn-group orgEditButton">
+				<button type="button" class="btn edit orgEditButtonTwo" id="{{_id}}">
+					<h6 class="orgEditTwo" id="{{_id}}">EDIT</h6>
+				</button>
+				<button type="button" id="{{_id}}" class="btn orgEditButtonTwo details">
+					<h6 class="orgEditTwo" id="{{_id}}">VIEW</h6>
+				</button>
+				<button type="button" id="{{_id}}" class="btn remove orgEditButtonTwo">
+					<h6 id={{_id}} class="orgEditTwo">REMOVE</h6>
+				</button>
+			</div>
+		</td>
+	</tr>
+	<hr class="lineGap">
+</template>
+
+
+<template name="manage">
+	<div class='container'>
+		<div class="col-md-9">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">My Opportunities</h3>
+			</div>
+			<div class="panel-body">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th><center>Slots Filled</center></th>
+							<th><center>Total Slots</center></th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each data}}
+							{{> manageLine}}
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		</div>
+		<div class="col-md-3">
+			<div class="well">
+				<center>
+					<h4>Add an Opportunity</h4>
+				<hr>
+					<button type="button" class="btn add addOpportunities">
+						<h4>Add</h4>
+					</button>
+				</center>
+			</div>
+			{{#with counts}}
+		<div class="well">
+			<center>
+				<h4><strong>Total Slots</strong></h4>
+				<hr class="infoLineGap">
+				<h4>{{total}}</h4>
+			</center>
+		</div>
+		<div class="well">
+			<center>
+				<h4><strong>Total Slots Filled</strong></h4>
+				<hr class="infoLineGap">
+				<h4>{{accepts}}</h4>
+				</center>
+			</div>
+			{{/with}}
+		</div>
+	</div>
+</template>

@@ -1,15 +1,38 @@
 <template name="dashboard">
   <div class='container'>
     <h1>Welcome to VolunteerSimple!</h1>
-    <input type="text" name="search" placeholder=" Search..." class="search">
+
+
+
     <div class="row">
 
-      {{> opportunity}}
-      {{> opportunity}}
-      {{> opportunity}}
+
+      {{#if isInRole 'client'}}
+      <div class="well">
+        <ol>
+          {{#each list}}
+          <li class="deta">{{title}}<button type="button" id="{{_id}}" class="btn deta orgEditButton"><h6 class="det orgEdit" id="{{_id}}">DETAILS</h6></button></li>
+          {{/each}}
+        </ol>
+      </div>
+
+      <div class="row">
+
+        {{#each post}}
+        {{> opportunity}}
+        {{/each}}
+      </div>
+      {{/if}}
 
 
     </div>
+
+    <!-- VOLUNTEER DASHBOARD ABOVE; ORGANAZATION DASHBOARD BELOW -->
+
+
+    {{#if isInRole 'poster'}}
+
+
     <!--My Opportunities Section-->
     <div class="row">
       <div class="col-md-9">
@@ -19,15 +42,16 @@
           </div>
           <div class="panel-body">
             <ol>
-              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
-              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
-              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
-              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
-              <li><span style="orgListHighLight">Opportunity<button type="button" class="btn  orgEditButton"><h6 class="orgEdit">EDIT</h6></button></span></li>
+              <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></li>
+              <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></li>
+              <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></li>
+              <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></li>
+              <li>Opportunity<button type="button" class="btn orgEditButton"><h6 class="orgEdit">EDIT</h6></button></li>
             </ol>
           </div>
         </div>
       </div>
+
       <!--Add Button-->
       <div class="col-md-3">
         <div class="well">
@@ -50,56 +74,52 @@
       </div>
       <!--Notifications-->
       <div class="row">
-        <div class="col-md-6">
+        <!--<div class="col-md-6">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Notifications</h3>
+              <div class="row"><h3 class="panel-title">Notifications</h3><button type="button" class="btn">Remove All</button></div>
             </div>
             <div class="panel-body">
               <p>...</p>
             </div>
           </div>
-        </div>
+        </div>-->
         <!--Pinned-->
-        <div class="col-md-3">
-          <div class="panel panel-default">
+        <!--<div class="col-md-3">-->
+          <!--<div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Pinned</h3>
             </div>
             <div class="panel-body">
               <p>...</p>
             </div>
-          </div>
+          </div>-->
           <!--Send Notification-->
-          <div class="panel panel-default">
+          <!--<div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title">Send Notification</h3>
             </div>
             <div class="panel-body">
               <p>...</p>
             </div>
-          </div>
-        </div>
-        <!--Upcoming-->
-        <div class="col-md-3">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Upcoming</h3>
+          </div>-->
+
+          <!--Upcoming
+          <div class="col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Upcoming</h3>
+              </div>
+              <div class="panel-body">
+                <p>...</p>
+              </div>
             </div>
-            <div class="panel-body">
-              <p>...</p>
-            </div>
-          </div>
-        </div>
+          </div>-->
+        <!--</div>-->
       </div>
-
-
     </div>
-  </div>
+  {{/if}}
 
-
-
-
-
+</div>
 
 </template>

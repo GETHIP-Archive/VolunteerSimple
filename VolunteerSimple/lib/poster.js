@@ -12,6 +12,18 @@ posterSchema = new SimpleSchema({
     account: {
         type: String,
         label: "accountId"
+    },
+    org: {
+      type: String,
+      label: "org",
+    },
+    phone: {
+      type: String,
+      label: "phone"
+    },
+    email:{
+      type: String,
+      label: "email"
     }
 });
 

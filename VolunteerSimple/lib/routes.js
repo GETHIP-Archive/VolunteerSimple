@@ -5,13 +5,23 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 FlowRouter.route('/', {
   name: "sHome",
   action: function() {
-    BlazeLayout.render("content", {content: "dashboard"});
+    var type = "dashboard";
+    // if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    //   type = "manage";
+    // }
+    BlazeLayout.render("content", {content: type});
   }
 });
 
+FlowRouter.route('/login', {
+  name: "login",
+  action: function() {
+    BlazeLayout.render("content", {content: "login"});
+  }
+});
 
 FlowRouter.route('/schedule', {
-  name: "saved",
+  name: "clipboard",
   action: function() {
     BlazeLayout.render("content", {content: "saved"});
   }
@@ -37,6 +47,12 @@ FlowRouter.route('/details/:_id', {
     BlazeLayout.render("content", {content: "details"});
   }
 });
+FlowRouter.route('/details', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "details"});
+  }
+});
 
 FlowRouter.route('/completed', {
   name: "completed",
@@ -52,9 +68,38 @@ FlowRouter.route('/signup', {
   }
 });
 
-FlowRouter.route('/opportunity-create', {
-  name: "opportunity-create",
+
+FlowRouter.route('/new', {
+  name: "new",
   action: function() {
-    BlazeLayout.render("content", {content: "opportunity-create"});
+    BlazeLayout.render("content", {content: "details"});
+  }
+});
+
+FlowRouter.route('/information/:_id', {
+  name: "information",
+  action: function() {
+    BlazeLayout.render("content", {content: "information"});
+  }
+});
+
+FlowRouter.route('/manage', {
+  name: "manage",
+  action: function() {
+    BlazeLayout.render("content", {content: "manage"});
+  }
+});
+
+FlowRouter.route('/create', {
+  name: "sHome",
+  action: function() {
+    BlazeLayout.render("content", {content: "create"});
+  }
+});
+
+FlowRouter.route('/home', {
+  name: "home",
+  action: function() {
+    BlazeLayout.render("content", {content: "manage"});
   }
 });
