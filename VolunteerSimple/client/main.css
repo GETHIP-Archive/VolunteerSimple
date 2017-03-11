@@ -1,3 +1,7 @@
+hr {
+  border-top: 1px solid #155b55;
+}
+
 span.crosshair {
     cursor: crosshair;
 }
