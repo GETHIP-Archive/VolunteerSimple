@@ -7,10 +7,18 @@ Template.newL.events({
           if(error){
 
           }else{
-            FlowRouter.go("/");
+            routeHome();
           }
       });
 
 
     }
 });
+
+function routeHome(){
+  if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    FlowRouter.go("/home");
+  }else if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
+    FlowRouter.go("/");
+  }
+}

@@ -15,6 +15,7 @@ Template.information.helpers({
     data.org = poster.org;
     data.phone = poster.phone;
     data.email = poster.email;
+    data.sUps = data.accepts.length;
     return data;
   },
   status: function(){
@@ -32,7 +33,7 @@ Template.information.events({
   },
     'click .remove': function(event){
       Meteor.call("removeOpp", event.target.id);
-      FlowRouter.go("/");
+      routeHome();
     },
     'click .edit': function(event){
       FlowRouter.go("/details/" + event.target.id);
@@ -50,5 +51,13 @@ function stat(){
     return true;
   }else{
     return false;
+  }
+}
+
+function routeHome(){
+  if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    FlowRouter.go("/home");
+  }else if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
+    FlowRouter.go("/");
   }
 }

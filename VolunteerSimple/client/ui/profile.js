@@ -28,7 +28,7 @@ Template.profile.events({
       email: event.target.email.value
     }
     Meteor.call("updateProfile", Meteor.user()._id, update, "client");
-  FlowRouter.go("/");
+    routeHome();
 }else if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
   var update = {
     firstName: event.target.fName.value,
@@ -38,7 +38,15 @@ Template.profile.events({
     org: event.target.org.value
   }
     Meteor.call("updateProfile", Meteor.user()._id, update, "poster");
-  FlowRouter.go("/");
+  routeHome();
 }
   }
 });
+
+function routeHome(){
+  if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    FlowRouter.go("/home");
+  }else if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
+    FlowRouter.go("/");
+  }
+}

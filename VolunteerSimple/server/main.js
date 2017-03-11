@@ -8,7 +8,7 @@ import { Template } from 'meteor/templating';
 
 
 Meteor.startup(() => {
-  Meteor.call("addData");
+  //Meteor.call("addData");
 });
 
 Meteor.publish("Posters", function(){

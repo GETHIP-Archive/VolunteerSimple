@@ -2,9 +2,9 @@
 	<tr>
         <td>{{title}}</td>
 		<!--Slots Filled-->
-		<td><center>321</center></td>
+		<td><center>{{filled}}</center></td>
 		<!--Slots Open-->
-		<td><center>123</center></td>
+		<td><center>{{slots}}</center></td>
 		<td>
 			<div class="btn-group orgEditButton">
 				<button type="button" class="btn edit orgEditButtonTwo" id="{{_id}}">
@@ -36,7 +36,7 @@
 						<tr>
 							<th>Name</th>
 							<th><center>Slots Filled</center></th>
-							<th><center>Slots Open</center></th>
+							<th><center>Total Slots</center></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -58,20 +58,22 @@
 					</button>
 				</center>
 			</div>
+			{{#with counts}}
 		<div class="well">
 			<center>
-				<h4><strong>Total Slots Open</strong></h4>
+				<h4><strong>Total Slots</strong></h4>
 				<hr class="infoLineGap">
-				<h4>321</h4>
+				<h4>{{total}}</h4>
 			</center>
 		</div>
 		<div class="well">
 			<center>
 				<h4><strong>Total Slots Filled</strong></h4>
 				<hr class="infoLineGap">
-				<h4>123</h4>
+				<h4>{{accepts}}</h4>
 				</center>
 			</div>
+			{{/with}}
 		</div>
 	</div>
 </template>

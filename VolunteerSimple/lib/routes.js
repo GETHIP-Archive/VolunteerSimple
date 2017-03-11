@@ -6,9 +6,9 @@ FlowRouter.route('/', {
   name: "sHome",
   action: function() {
     var type = "dashboard";
-    if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
-      type = "manage";
-    }
+    // if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    //   type = "manage";
+    // }
     BlazeLayout.render("content", {content: type});
   }
 });
@@ -94,5 +94,12 @@ FlowRouter.route('/create', {
   name: "sHome",
   action: function() {
     BlazeLayout.render("content", {content: "create"});
+  }
+});
+
+FlowRouter.route('/home', {
+  name: "home",
+  action: function() {
+    BlazeLayout.render("content", {content: "manage"});
   }
 });

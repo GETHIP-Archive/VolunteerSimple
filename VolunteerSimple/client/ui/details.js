@@ -24,8 +24,8 @@ Template.details.helpers({
       if(FlowRouter.getRouteName() == "new"){
         return empty;
       }else if(FlowRouter.getRouteName() == "details"){
+        console.log(Opportunity.findOne({_id: FlowRouter.getParam("_id")}));
         return Opportunity.findOne({_id: FlowRouter.getParam("_id")});
-
     }
   },
   mode: function(){
@@ -39,6 +39,13 @@ Template.details.helpers({
 
 
 Template.details.events({
+  'click .cancel': function(event){
+      routeHome();
+  },
+  'click .remove': function(event){
+    Meteor.call("removeOpp", event.target.id);
+    routeHome();
+  },
   'submit .action':function(event){
     event.preventDefault();
     var opp = {
@@ -57,6 +64,8 @@ Template.details.events({
       time: event.target.time.value
     }
 
+    console.log(opp);
+
     if(FlowRouter.getRouteName() == "new"){
     Meteor.call("createOpp", opp, function(error, id){
         checkValid(id);
@@ -74,6 +83,14 @@ function checkValid(id){
   if(id == null){
     console.log("Error in creation");
   }else{
+    routeHome();
+  }
+}
+
+function routeHome(){
+  if(Roles.userIsInRole(Meteor.user()._id, ["poster"])){
+    FlowRouter.go("/home");
+  }else if(Roles.userIsInRole(Meteor.user()._id, ["client"])){
     FlowRouter.go("/");
   }
 }

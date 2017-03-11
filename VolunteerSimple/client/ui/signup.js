@@ -23,7 +23,7 @@ Template.newS.events({
         if(role == "client"){
         FlowRouter.go("/");
       }else if(role == "poster"){
-        FlowRouter.go("/manage");
+        FlowRouter.go("/home");
       }
       }
     });
