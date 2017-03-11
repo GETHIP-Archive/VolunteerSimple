@@ -24,7 +24,6 @@ Template.details.helpers({
       if(FlowRouter.getRouteName() == "new"){
         return empty;
       }else if(FlowRouter.getRouteName() == "details"){
-        console.log(Opportunity.findOne({_id: FlowRouter.getParam("_id")}));
         return Opportunity.findOne({_id: FlowRouter.getParam("_id")});
     }
   },
@@ -64,7 +63,6 @@ Template.details.events({
       time: event.target.time.value
     }
 
-    console.log(opp);
 
     if(FlowRouter.getRouteName() == "new"){
     Meteor.call("createOpp", opp, function(error, id){

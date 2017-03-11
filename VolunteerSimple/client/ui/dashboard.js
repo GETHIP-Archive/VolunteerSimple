@@ -9,13 +9,11 @@ Meteor.subscribe("Posters");
 
 Template.dashboard.helpers({
     post: function() {
-      console.log("crap");
         var result = Opportunity.find().fetch();
         var saved = Clients.findOne({account: Meteor.user()._id}).saved;
         for(var i = 0; i < result.length; i++){
         if(saved.includes(result[i]._id)){
           result[i].stat = false;
-          console.log("faksel");
         }else{
           result[i].stat = true;
           }

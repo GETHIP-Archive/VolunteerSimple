@@ -52,7 +52,6 @@ function getCount(){
   var total = 0;
   var data = Opportunity.find({owner: Meteor.user()._id}).fetch();
   for(var i = 0; i < data.length; i++){
-    console.log(data[i]);
     total = total + parseInt(data[i].slots);
   }
   return total;
@@ -62,7 +61,6 @@ function getSup(){
   var total = 0;
   var data = Opportunity.find({owner: Meteor.user()._id}).fetch();
   for(var i = 0; i < data.length; i++){
-    console.log(data[i]);
     total = total + parseInt(data[i].accepts.length);
   }
   return (total - data.length);
